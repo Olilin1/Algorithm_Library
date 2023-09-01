@@ -4,7 +4,7 @@ Author: Oliver Lindgren
 
 #ifndef POLYGON_POINT_INSIDE_HPP
 #define POLYGON_POINT_INSIDE_HPP
-#include"Points.hpp"
+#include"Geometry\Points\Points.hpp"
 #include<vector>
 #include<stdexcept>
 #include<utility>

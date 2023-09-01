@@ -4,7 +4,7 @@ Author: Oliver Lindgren
 
 #ifndef POLYGON_AREA_HPP
 #define POLYGON_AREA_HPP
-#include"Points.hpp"
+#include"Geometry\Points\Points.hpp"
 #include<vector>
 #include<stddef.h>
 

@@ -2,7 +2,7 @@
 #define CHINESE_REMAINDER_HPP
 #include<vector>
 #include<utility>
-#include"modular.hpp"
+#include"Arithmetic\Modular-Arithmetic\modular.hpp"
 
 /*
 Function to solve a system of congruencies of the form

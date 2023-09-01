@@ -4,7 +4,7 @@ Author: Oliver Lindgren
 
 #ifndef CONVEX_HULL_HPP
 #define CONVEX_HULL_HPP
-#include"Points.hpp"
+#include"Geometry\Points\Points.hpp"
 #include<vector>
 #include<algorithm>
 
