@@ -23,11 +23,11 @@ std::vector<Point<T>> convex_hull(std::vector<Point<T>> points){
     std::vector<Point<T>> hull;
 
     //This is to later remove duplicates
-    //This has a potential bug, if two points are colinear and same size but in opposite directions, and there are multiple of each, then they may overlap in a bad way, exempting them from removal.
     std::sort(points.begin(), points.end(), [&org](Point<T> const & a, Point<T> const & b){
-        T cross = cross_product(subtract(a, org), subtract(b, org));
-        if(cross == 0) return distSquared(org, a) > distSquared(org, b); //De är ko-linjära
-        else return cross > 0;
+        if(a.x == b.x)
+            return a.y < b.y;
+        else
+            return a.x < b.x;
     });
 
     //remove duplicates
