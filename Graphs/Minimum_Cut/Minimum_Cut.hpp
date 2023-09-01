@@ -5,7 +5,7 @@ AUTHOR: Oliver Lindgren
 #ifndef MINIMUM_CUT
 #define MINIMUM_CUT
 
-#include "Maximum_Flow.hpp"
+#include "Graphs\Maximum_Flow\Maximum_Flow.hpp"
 
 /*
 My implementation of using dinitz algorithm to calculate the minimum cut of a graph.

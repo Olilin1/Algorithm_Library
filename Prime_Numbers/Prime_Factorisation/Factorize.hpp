@@ -6,7 +6,7 @@ AUTHOR: Oliver Lindgren
 #include<cmath>
 #include<vector>
 
-#include"Sieve.hpp"
+#include"Prime_Numbers\Prime_Sieve\Sieve.hpp"
 
 using namespace std;
 

@@ -9,7 +9,7 @@ AUTHOR: Oliver Lindgren
 #include<utility>
 #include<algorithm>
 #include<stddef.h>
-#include"DisjointSet.hpp"
+#include"Data_Structures\Disjoint_Set\DisjointSet.hpp"
 
 /*
 Function used to calculate the minimum spanning tree of a graph.
@@ -20,6 +20,21 @@ If there is no minimum spanning tree then the size is returned as -1 and the vec
 Time complexity: O(m * log(n)) where n is the number of nodes and m is the number of edges in the graph. 
 */
 
-std::pair<long long int, std::vector<std::pair<size_t, size_t>>> mst(size_t vertices, std::vector<std::pair<long long int, std::pair<size_t, size_t>>> edges);
+std::pair<long long int, std::vector<std::pair<size_t, size_t>>> mst(size_t vertices, std::vector<std::pair<long long int, std::pair<size_t, size_t>>> edges){
+    long long int cost = 0;
+    std::vector<std::pair<size_t,size_t>> included;
+    std::sort(edges.begin(), edges.end());
+    DisjointSet s(vertices);
+    for(auto a : edges) {
+        if (!s.query(a.second.first, a.second.second)) {
+            s.unionSets(a.second.first, a.second.second);
+            included.push_back({a.second.first, a.second.second});
+            cost += a.first;
+        }
+    }
+
+    if(included.size() != vertices-1) return {-1, {}};
+    return {cost,included};
+}
 
 #endif
