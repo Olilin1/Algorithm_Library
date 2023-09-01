@@ -1,0 +1,337 @@
+\indexentry{Algorithm\_Library@{Algorithm\_Library}|hyperpage}{1}
+\indexentry{DisjointSet@{DisjointSet}|hyperpage}{7}
+\indexentry{DisjointSet@{DisjointSet}!DisjointSet@{DisjointSet}|hyperpage}{7}
+\indexentry{DisjointSet@{DisjointSet}!DisjointSet@{DisjointSet}|hyperpage}{7}
+\indexentry{DisjointSet@{DisjointSet}!query@{query}|hyperpage}{7}
+\indexentry{query@{query}!DisjointSet@{DisjointSet}|hyperpage}{7}
+\indexentry{DisjointSet@{DisjointSet}!unionSets@{unionSets}|hyperpage}{7}
+\indexentry{unionSets@{unionSets}!DisjointSet@{DisjointSet}|hyperpage}{7}
+\indexentry{Edge@{Edge}|hyperpage}{8}
+\indexentry{Edge@{Edge}!capacity@{capacity}|hyperpage}{8}
+\indexentry{capacity@{capacity}!Edge@{Edge}|hyperpage}{8}
+\indexentry{Edge@{Edge}!destination@{destination}|hyperpage}{8}
+\indexentry{destination@{destination}!Edge@{Edge}|hyperpage}{8}
+\indexentry{Edge@{Edge}!firstDeparture@{firstDeparture}|hyperpage}{8}
+\indexentry{firstDeparture@{firstDeparture}!Edge@{Edge}|hyperpage}{8}
+\indexentry{Edge@{Edge}!flow@{flow}|hyperpage}{8}
+\indexentry{flow@{flow}!Edge@{Edge}|hyperpage}{8}
+\indexentry{Edge@{Edge}!from@{from}|hyperpage}{8}
+\indexentry{from@{from}!Edge@{Edge}|hyperpage}{8}
+\indexentry{Edge@{Edge}!repeatDepartures@{repeatDepartures}|hyperpage}{9}
+\indexentry{repeatDepartures@{repeatDepartures}!Edge@{Edge}|hyperpage}{9}
+\indexentry{Edge@{Edge}!reverse@{reverse}|hyperpage}{9}
+\indexentry{reverse@{reverse}!Edge@{Edge}|hyperpage}{9}
+\indexentry{Edge@{Edge}!to@{to}|hyperpage}{9}
+\indexentry{to@{to}!Edge@{Edge}|hyperpage}{9}
+\indexentry{Edge@{Edge}!travelTime@{travelTime}|hyperpage}{9}
+\indexentry{travelTime@{travelTime}!Edge@{Edge}|hyperpage}{9}
+\indexentry{Edge@{Edge}!weight@{weight}|hyperpage}{9}
+\indexentry{weight@{weight}!Edge@{Edge}|hyperpage}{9}
+\indexentry{FenwickTree@{FenwickTree}|hyperpage}{9}
+\indexentry{FenwickTree@{FenwickTree}!FenwickTree@{FenwickTree}|hyperpage}{10}
+\indexentry{FenwickTree@{FenwickTree}!FenwickTree@{FenwickTree}|hyperpage}{10}
+\indexentry{FenwickTree@{FenwickTree}!````~FenwickTree@{\texorpdfstring{$\sim$}{\string~}FenwickTree}|hyperpage}{10}
+\indexentry{````~FenwickTree@{\texorpdfstring{$\sim$}{\string~}FenwickTree}!FenwickTree@{FenwickTree}|hyperpage}{10}
+\indexentry{FenwickTree@{FenwickTree}!Query@{Query}|hyperpage}{10}
+\indexentry{Query@{Query}!FenwickTree@{FenwickTree}|hyperpage}{10}
+\indexentry{FenwickTree@{FenwickTree}!Update@{Update}|hyperpage}{10}
+\indexentry{Update@{Update}!FenwickTree@{FenwickTree}|hyperpage}{10}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{10}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!length@{length}|hyperpage}{11}
+\indexentry{length@{length}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!lengthSquared@{lengthSquared}|hyperpage}{11}
+\indexentry{lengthSquared@{lengthSquared}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!magnitude@{magnitude}|hyperpage}{11}
+\indexentry{magnitude@{magnitude}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!magnitudeSquared@{magnitudeSquared}|hyperpage}{11}
+\indexentry{magnitudeSquared@{magnitudeSquared}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!operator"!=@{operator"!=}|hyperpage}{11}
+\indexentry{operator"!=@{operator"!=}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!operator+@{operator+}|hyperpage}{11}
+\indexentry{operator+@{operator+}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{11}
+\indexentry{operator-\/@{operator-\/}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!operator==@{operator==}|hyperpage}{11}
+\indexentry{operator==@{operator==}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{11}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!x@{x}|hyperpage}{12}
+\indexentry{x@{x}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{12}
+\indexentry{Point$<$ T $>$@{Point$<$ T $>$}!y@{y}|hyperpage}{12}
+\indexentry{y@{y}!Point$<$ T $>$@{Point$<$ T $>$}|hyperpage}{12}
+\indexentry{Prime\_Sieve@{Prime\_Sieve}|hyperpage}{12}
+\indexentry{Prime\_Sieve@{Prime\_Sieve}!Prime\_Sieve@{Prime\_Sieve}|hyperpage}{12}
+\indexentry{Prime\_Sieve@{Prime\_Sieve}!Prime\_Sieve@{Prime\_Sieve}|hyperpage}{12}
+\indexentry{Prime\_Sieve@{Prime\_Sieve}!get\_Number\_Of\_Primes@{get\_Number\_Of\_Primes}|hyperpage}{12}
+\indexentry{get\_Number\_Of\_Primes@{get\_Number\_Of\_Primes}!Prime\_Sieve@{Prime\_Sieve}|hyperpage}{12}
+\indexentry{Prime\_Sieve@{Prime\_Sieve}!get\_Primes@{get\_Primes}|hyperpage}{12}
+\indexentry{get\_Primes@{get\_Primes}!Prime\_Sieve@{Prime\_Sieve}|hyperpage}{12}
+\indexentry{Prime\_Sieve@{Prime\_Sieve}!is\_Prime@{is\_Prime}|hyperpage}{13}
+\indexentry{is\_Prime@{is\_Prime}!Prime\_Sieve@{Prime\_Sieve}|hyperpage}{13}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{13}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!normalise@{normalise}|hyperpage}{13}
+\indexentry{normalise@{normalise}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{13}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}|hyperpage}{13}
+\indexentry{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{13}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!operator+@{operator+}|hyperpage}{13}
+\indexentry{operator+@{operator+}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{13}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!operator-\/@{operator-\/}|hyperpage}{14}
+\indexentry{operator-\/@{operator-\/}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{14}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!operator/@{operator/}|hyperpage}{14}
+\indexentry{operator/@{operator/}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{14}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!denominator@{denominator}|hyperpage}{14}
+\indexentry{denominator@{denominator}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{14}
+\indexentry{Rational$<$ T $>$@{Rational$<$ T $>$}!numerator@{numerator}|hyperpage}{14}
+\indexentry{numerator@{numerator}!Rational$<$ T $>$@{Rational$<$ T $>$}|hyperpage}{14}
+\indexentry{Segment\_Tree$<$ T $>$@{Segment\_Tree$<$ T $>$}|hyperpage}{14}
+\indexentry{Segment\_Tree$<$ T $>$@{Segment\_Tree$<$ T $>$}!Segment\_Tree@{Segment\_Tree}|hyperpage}{15}
+\indexentry{Segment\_Tree@{Segment\_Tree}!Segment\_Tree$<$ T $>$@{Segment\_Tree$<$ T $>$}|hyperpage}{15}
+\indexentry{Segment\_Tree$<$ T $>$@{Segment\_Tree$<$ T $>$}!Query@{Query}|hyperpage}{15}
+\indexentry{Query@{Query}!Segment\_Tree$<$ T $>$@{Segment\_Tree$<$ T $>$}|hyperpage}{15}
+\indexentry{SuffixArray@{SuffixArray}|hyperpage}{15}
+\indexentry{SuffixArray@{SuffixArray}!SuffixArray@{SuffixArray}|hyperpage}{15}
+\indexentry{SuffixArray@{SuffixArray}!SuffixArray@{SuffixArray}|hyperpage}{15}
+\indexentry{SuffixArray@{SuffixArray}!getSuffix@{getSuffix}|hyperpage}{15}
+\indexentry{getSuffix@{getSuffix}!SuffixArray@{SuffixArray}|hyperpage}{15}
+\indexentry{TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{TrieAutomaton@{TrieAutomaton}!TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{TrieAutomaton@{TrieAutomaton}!TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{TrieAutomaton@{TrieAutomaton}!````~TrieAutomaton@{\texorpdfstring{$\sim$}{\string~}TrieAutomaton}|hyperpage}{16}
+\indexentry{````~TrieAutomaton@{\texorpdfstring{$\sim$}{\string~}TrieAutomaton}!TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{TrieAutomaton@{TrieAutomaton}!add\_string@{add\_string}|hyperpage}{16}
+\indexentry{add\_string@{add\_string}!TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{TrieAutomaton@{TrieAutomaton}!construct\_automaton@{construct\_automaton}|hyperpage}{16}
+\indexentry{construct\_automaton@{construct\_automaton}!TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{TrieAutomaton@{TrieAutomaton}!search@{search}|hyperpage}{16}
+\indexentry{search@{search}!TrieAutomaton@{TrieAutomaton}|hyperpage}{16}
+\indexentry{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp@{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp}|hyperpage}{17}
+\indexentry{Chinese\_Remainder.hpp@{Chinese\_Remainder.hpp}!Solve\_System\_Of\_Congruencies@{Solve\_System\_Of\_Congruencies}|hyperpage}{17}
+\indexentry{Solve\_System\_Of\_Congruencies@{Solve\_System\_Of\_Congruencies}!Chinese\_Remainder.hpp@{Chinese\_Remainder.hpp}|hyperpage}{17}
+\indexentry{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp@{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp}|hyperpage}{18}
+\indexentry{Arithmetic/Modular-\/Arithmetic/modular.hpp@{Arithmetic/Modular-\/Arithmetic/modular.hpp}|hyperpage}{18}
+\indexentry{modular.hpp@{modular.hpp}!i128@{i128}|hyperpage}{19}
+\indexentry{i128@{i128}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!ll@{ll}|hyperpage}{19}
+\indexentry{ll@{ll}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!u128@{u128}|hyperpage}{19}
+\indexentry{u128@{u128}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!ull@{ull}|hyperpage}{19}
+\indexentry{ull@{ull}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!gcd@{gcd}|hyperpage}{19}
+\indexentry{gcd@{gcd}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!mod@{mod}|hyperpage}{19}
+\indexentry{mod@{mod}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!modAdd@{modAdd}|hyperpage}{19}
+\indexentry{modAdd@{modAdd}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!modDiv@{modDiv}|hyperpage}{19}
+\indexentry{modDiv@{modDiv}!modular.hpp@{modular.hpp}|hyperpage}{19}
+\indexentry{modular.hpp@{modular.hpp}!modInverse@{modInverse}|hyperpage}{20}
+\indexentry{modInverse@{modInverse}!modular.hpp@{modular.hpp}|hyperpage}{20}
+\indexentry{modular.hpp@{modular.hpp}!modMult@{modMult}|hyperpage}{20}
+\indexentry{modMult@{modMult}!modular.hpp@{modular.hpp}|hyperpage}{20}
+\indexentry{modular.hpp@{modular.hpp}!modSub@{modSub}|hyperpage}{20}
+\indexentry{modSub@{modSub}!modular.hpp@{modular.hpp}|hyperpage}{20}
+\indexentry{Arithmetic/Modular-\/Arithmetic/modular.hpp@{Arithmetic/Modular-\/Arithmetic/modular.hpp}|hyperpage}{20}
+\indexentry{Arithmetic/Rational arithmetic/rational.hpp@{Arithmetic/Rational arithmetic/rational.hpp}|hyperpage}{21}
+\indexentry{rational.hpp@{rational.hpp}!gcd@{gcd}|hyperpage}{22}
+\indexentry{gcd@{gcd}!rational.hpp@{rational.hpp}|hyperpage}{22}
+\indexentry{rational.hpp@{rational.hpp}!operator$<$$<$@{operator$<$$<$}|hyperpage}{22}
+\indexentry{operator$<$$<$@{operator$<$$<$}!rational.hpp@{rational.hpp}|hyperpage}{22}
+\indexentry{rational.hpp@{rational.hpp}!operator$>$$>$@{operator$>$$>$}|hyperpage}{22}
+\indexentry{operator$>$$>$@{operator$>$$>$}!rational.hpp@{rational.hpp}|hyperpage}{22}
+\indexentry{Arithmetic/Rational arithmetic/rational.hpp@{Arithmetic/Rational arithmetic/rational.hpp}|hyperpage}{22}
+\indexentry{Data\_Structures/Disjoint\_Set/DisjointSet.hpp@{Data\_Structures/Disjoint\_Set/DisjointSet.hpp}|hyperpage}{23}
+\indexentry{Data\_Structures/Disjoint\_Set/DisjointSet.hpp@{Data\_Structures/Disjoint\_Set/DisjointSet.hpp}|hyperpage}{24}
+\indexentry{Data\_Structures/FenwickTree/FenwickTree.hpp@{Data\_Structures/FenwickTree/FenwickTree.hpp}|hyperpage}{25}
+\indexentry{Data\_Structures/FenwickTree/FenwickTree.hpp@{Data\_Structures/FenwickTree/FenwickTree.hpp}|hyperpage}{25}
+\indexentry{Data\_Structures/Segment\_Tree/Segment\_Tree.hpp@{Data\_Structures/Segment\_Tree/Segment\_Tree.hpp}|hyperpage}{26}
+\indexentry{Data\_Structures/Segment\_Tree/Segment\_Tree.hpp@{Data\_Structures/Segment\_Tree/Segment\_Tree.hpp}|hyperpage}{26}
+\indexentry{Geometry/Convex\_Hull/Convex\_Hull.hpp@{Geometry/Convex\_Hull/Convex\_Hull.hpp}|hyperpage}{27}
+\indexentry{Convex\_Hull.hpp@{Convex\_Hull.hpp}!convex\_hull@{convex\_hull}|hyperpage}{27}
+\indexentry{convex\_hull@{convex\_hull}!Convex\_Hull.hpp@{Convex\_Hull.hpp}|hyperpage}{27}
+\indexentry{Geometry/Convex\_Hull/Convex\_Hull.hpp@{Geometry/Convex\_Hull/Convex\_Hull.hpp}|hyperpage}{28}
+\indexentry{Geometry/Inside\_Polygon/Inside.hpp@{Geometry/Inside\_Polygon/Inside.hpp}|hyperpage}{28}
+\indexentry{Inside.hpp@{Inside.hpp}!Status@{Status}|hyperpage}{29}
+\indexentry{Status@{Status}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Outside@{Outside}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Inside.hpp@{Inside.hpp}!Outside@{Outside}|hyperpage}{29}
+\indexentry{OnEdge@{OnEdge}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Inside.hpp@{Inside.hpp}!OnEdge@{OnEdge}|hyperpage}{29}
+\indexentry{Inside@{Inside}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Inside.hpp@{Inside.hpp}!Inside@{Inside}|hyperpage}{29}
+\indexentry{Inside.hpp@{Inside.hpp}!inside\_poly@{inside\_poly}|hyperpage}{29}
+\indexentry{inside\_poly@{inside\_poly}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Inside.hpp@{Inside.hpp}!myAbs@{myAbs}|hyperpage}{29}
+\indexentry{myAbs@{myAbs}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Inside.hpp@{Inside.hpp}!onSegment@{onSegment}|hyperpage}{29}
+\indexentry{onSegment@{onSegment}!Inside.hpp@{Inside.hpp}|hyperpage}{29}
+\indexentry{Geometry/Inside\_Polygon/Inside.hpp@{Geometry/Inside\_Polygon/Inside.hpp}|hyperpage}{30}
+\indexentry{Geometry/Line\_Intersection/intersection.hpp@{Geometry/Line\_Intersection/intersection.hpp}|hyperpage}{31}
+\indexentry{intersection.hpp@{intersection.hpp}!line\_intersection@{line\_intersection}|hyperpage}{31}
+\indexentry{line\_intersection@{line\_intersection}!intersection.hpp@{intersection.hpp}|hyperpage}{31}
+\indexentry{Geometry/Line\_Intersection/intersection.hpp@{Geometry/Line\_Intersection/intersection.hpp}|hyperpage}{31}
+\indexentry{Geometry/Points/Points.hpp@{Geometry/Points/Points.hpp}|hyperpage}{32}
+\indexentry{Points.hpp@{Points.hpp}!add@{add}|hyperpage}{32}
+\indexentry{add@{add}!Points.hpp@{Points.hpp}|hyperpage}{32}
+\indexentry{Points.hpp@{Points.hpp}!angle@{angle}|hyperpage}{32}
+\indexentry{angle@{angle}!Points.hpp@{Points.hpp}|hyperpage}{32}
+\indexentry{Points.hpp@{Points.hpp}!cross\_product@{cross\_product}|hyperpage}{33}
+\indexentry{cross\_product@{cross\_product}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!dist@{dist}|hyperpage}{33}
+\indexentry{dist@{dist}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!distSquared@{distSquared}|hyperpage}{33}
+\indexentry{distSquared@{distSquared}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!dot\_product@{dot\_product}|hyperpage}{33}
+\indexentry{dot\_product@{dot\_product}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!intersect@{intersect}|hyperpage}{33}
+\indexentry{intersect@{intersect}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!length@{length}|hyperpage}{33}
+\indexentry{length@{length}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!lengthSquared@{lengthSquared}|hyperpage}{33}
+\indexentry{lengthSquared@{lengthSquared}!Points.hpp@{Points.hpp}|hyperpage}{33}
+\indexentry{Points.hpp@{Points.hpp}!operator$<$$<$@{operator$<$$<$}|hyperpage}{34}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Points.hpp@{Points.hpp}|hyperpage}{34}
+\indexentry{Points.hpp@{Points.hpp}!operator$>$$>$@{operator$>$$>$}|hyperpage}{34}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Points.hpp@{Points.hpp}|hyperpage}{34}
+\indexentry{Points.hpp@{Points.hpp}!scalar\_multiplication@{scalar\_multiplication}|hyperpage}{34}
+\indexentry{scalar\_multiplication@{scalar\_multiplication}!Points.hpp@{Points.hpp}|hyperpage}{34}
+\indexentry{Points.hpp@{Points.hpp}!simple\_polygon@{simple\_polygon}|hyperpage}{34}
+\indexentry{simple\_polygon@{simple\_polygon}!Points.hpp@{Points.hpp}|hyperpage}{34}
+\indexentry{Points.hpp@{Points.hpp}!subtract@{subtract}|hyperpage}{34}
+\indexentry{subtract@{subtract}!Points.hpp@{Points.hpp}|hyperpage}{34}
+\indexentry{Geometry/Points/Points.hpp@{Geometry/Points/Points.hpp}|hyperpage}{35}
+\indexentry{Geometry/Polygon\_Area/Area.hpp@{Geometry/Polygon\_Area/Area.hpp}|hyperpage}{36}
+\indexentry{Area.hpp@{Area.hpp}!Polygon\_area@{Polygon\_area}|hyperpage}{37}
+\indexentry{Polygon\_area@{Polygon\_area}!Area.hpp@{Area.hpp}|hyperpage}{37}
+\indexentry{Geometry/Polygon\_Area/Area.hpp@{Geometry/Polygon\_Area/Area.hpp}|hyperpage}{37}
+\indexentry{Graphs/Bellman\_Ford/Bellman\_Ford.hpp@{Graphs/Bellman\_Ford/Bellman\_Ford.hpp}|hyperpage}{37}
+\indexentry{Bellman\_Ford.hpp@{Bellman\_Ford.hpp}!Bellman\_Ford@{Bellman\_Ford}|hyperpage}{38}
+\indexentry{Bellman\_Ford@{Bellman\_Ford}!Bellman\_Ford.hpp@{Bellman\_Ford.hpp}|hyperpage}{38}
+\indexentry{Bellman\_Ford.hpp@{Bellman\_Ford.hpp}!inf@{inf}|hyperpage}{38}
+\indexentry{inf@{inf}!Bellman\_Ford.hpp@{Bellman\_Ford.hpp}|hyperpage}{38}
+\indexentry{Bellman\_Ford.hpp@{Bellman\_Ford.hpp}!negInf@{negInf}|hyperpage}{38}
+\indexentry{negInf@{negInf}!Bellman\_Ford.hpp@{Bellman\_Ford.hpp}|hyperpage}{38}
+\indexentry{Graphs/Bellman\_Ford/Bellman\_Ford.hpp@{Graphs/Bellman\_Ford/Bellman\_Ford.hpp}|hyperpage}{38}
+\indexentry{Graphs/Dijkstra/shortest\_path.hpp@{Graphs/Dijkstra/shortest\_path.hpp}|hyperpage}{39}
+\indexentry{shortest\_path.hpp@{shortest\_path.hpp}!distance@{distance}|hyperpage}{40}
+\indexentry{distance@{distance}!shortest\_path.hpp@{shortest\_path.hpp}|hyperpage}{40}
+\indexentry{shortest\_path.hpp@{shortest\_path.hpp}!node@{node}|hyperpage}{40}
+\indexentry{node@{node}!shortest\_path.hpp@{shortest\_path.hpp}|hyperpage}{40}
+\indexentry{shortest\_path.hpp@{shortest\_path.hpp}!parent@{parent}|hyperpage}{40}
+\indexentry{parent@{parent}!shortest\_path.hpp@{shortest\_path.hpp}|hyperpage}{40}
+\indexentry{shortest\_path.hpp@{shortest\_path.hpp}!weight@{weight}|hyperpage}{40}
+\indexentry{weight@{weight}!shortest\_path.hpp@{shortest\_path.hpp}|hyperpage}{40}
+\indexentry{shortest\_path.hpp@{shortest\_path.hpp}!ull@{ull}|hyperpage}{40}
+\indexentry{ull@{ull}!shortest\_path.hpp@{shortest\_path.hpp}|hyperpage}{40}
+\indexentry{shortest\_path.hpp@{shortest\_path.hpp}!dijkstra\_shortest\_path@{dijkstra\_shortest\_path}|hyperpage}{40}
+\indexentry{dijkstra\_shortest\_path@{dijkstra\_shortest\_path}!shortest\_path.hpp@{shortest\_path.hpp}|hyperpage}{40}
+\indexentry{Graphs/Dijkstra/shortest\_path.hpp@{Graphs/Dijkstra/shortest\_path.hpp}|hyperpage}{41}
+\indexentry{Graphs/Dijkstra\_Time\_Table/shortest\_path\_time\_table.hpp@{Graphs/Dijkstra\_Time\_Table/shortest\_path\_time\_table.hpp}|hyperpage}{41}
+\indexentry{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!distance@{distance}|hyperpage}{42}
+\indexentry{distance@{distance}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}|hyperpage}{42}
+\indexentry{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!node@{node}|hyperpage}{42}
+\indexentry{node@{node}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}|hyperpage}{42}
+\indexentry{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!parent@{parent}|hyperpage}{42}
+\indexentry{parent@{parent}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}|hyperpage}{42}
+\indexentry{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!weight@{weight}|hyperpage}{42}
+\indexentry{weight@{weight}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}|hyperpage}{42}
+\indexentry{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!ull@{ull}|hyperpage}{43}
+\indexentry{ull@{ull}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}|hyperpage}{43}
+\indexentry{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!dijkstra\_shortest\_path\_time\_table@{dijkstra\_shortest\_path\_time\_table}|hyperpage}{43}
+\indexentry{dijkstra\_shortest\_path\_time\_table@{dijkstra\_shortest\_path\_time\_table}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}|hyperpage}{43}
+\indexentry{Graphs/Dijkstra\_Time\_Table/shortest\_path\_time\_table.hpp@{Graphs/Dijkstra\_Time\_Table/shortest\_path\_time\_table.hpp}|hyperpage}{43}
+\indexentry{Graphs/Eulerian\_Path/Eulerian\_Path.hpp@{Graphs/Eulerian\_Path/Eulerian\_Path.hpp}|hyperpage}{44}
+\indexentry{Eulerian\_Path.hpp@{Eulerian\_Path.hpp}!Eulerian\_Path\_Directed@{Eulerian\_Path\_Directed}|hyperpage}{44}
+\indexentry{Eulerian\_Path\_Directed@{Eulerian\_Path\_Directed}!Eulerian\_Path.hpp@{Eulerian\_Path.hpp}|hyperpage}{44}
+\indexentry{Eulerian\_Path.hpp@{Eulerian\_Path.hpp}!Eulerian\_Path\_Undirected@{Eulerian\_Path\_Undirected}|hyperpage}{44}
+\indexentry{Eulerian\_Path\_Undirected@{Eulerian\_Path\_Undirected}!Eulerian\_Path.hpp@{Eulerian\_Path.hpp}|hyperpage}{44}
+\indexentry{Graphs/Eulerian\_Path/Eulerian\_Path.hpp@{Graphs/Eulerian\_Path/Eulerian\_Path.hpp}|hyperpage}{45}
+\indexentry{Graphs/Floyd\_Warhsall/floyd\_warshall.hpp@{Graphs/Floyd\_Warhsall/floyd\_warshall.hpp}|hyperpage}{47}
+\indexentry{floyd\_warshall.hpp@{floyd\_warshall.hpp}!Floyd\_Warshall@{Floyd\_Warshall}|hyperpage}{47}
+\indexentry{Floyd\_Warshall@{Floyd\_Warshall}!floyd\_warshall.hpp@{floyd\_warshall.hpp}|hyperpage}{47}
+\indexentry{Graphs/Floyd\_Warhsall/floyd\_warshall.hpp@{Graphs/Floyd\_Warhsall/floyd\_warshall.hpp}|hyperpage}{47}
+\indexentry{Graphs/Maximum\_Flow/Maximum\_Flow.hpp@{Graphs/Maximum\_Flow/Maximum\_Flow.hpp}|hyperpage}{48}
+\indexentry{Maximum\_Flow.hpp@{Maximum\_Flow.hpp}!dinic\_bfs@{dinic\_bfs}|hyperpage}{48}
+\indexentry{dinic\_bfs@{dinic\_bfs}!Maximum\_Flow.hpp@{Maximum\_Flow.hpp}|hyperpage}{48}
+\indexentry{Maximum\_Flow.hpp@{Maximum\_Flow.hpp}!dinic\_dfs@{dinic\_dfs}|hyperpage}{48}
+\indexentry{dinic\_dfs@{dinic\_dfs}!Maximum\_Flow.hpp@{Maximum\_Flow.hpp}|hyperpage}{48}
+\indexentry{Maximum\_Flow.hpp@{Maximum\_Flow.hpp}!dinic\_max\_flow@{dinic\_max\_flow}|hyperpage}{49}
+\indexentry{dinic\_max\_flow@{dinic\_max\_flow}!Maximum\_Flow.hpp@{Maximum\_Flow.hpp}|hyperpage}{49}
+\indexentry{Graphs/Maximum\_Flow/Maximum\_Flow.hpp@{Graphs/Maximum\_Flow/Maximum\_Flow.hpp}|hyperpage}{49}
+\indexentry{Graphs/Minimum\_Cut/Minimum\_Cut.hpp@{Graphs/Minimum\_Cut/Minimum\_Cut.hpp}|hyperpage}{51}
+\indexentry{Minimum\_Cut.hpp@{Minimum\_Cut.hpp}!minimum\_cut@{minimum\_cut}|hyperpage}{51}
+\indexentry{minimum\_cut@{minimum\_cut}!Minimum\_Cut.hpp@{Minimum\_Cut.hpp}|hyperpage}{51}
+\indexentry{Graphs/Minimum\_Cut/Minimum\_Cut.hpp@{Graphs/Minimum\_Cut/Minimum\_Cut.hpp}|hyperpage}{52}
+\indexentry{Graphs/MST/MST.hpp@{Graphs/MST/MST.hpp}|hyperpage}{52}
+\indexentry{MST.hpp@{MST.hpp}!mst@{mst}|hyperpage}{53}
+\indexentry{mst@{mst}!MST.hpp@{MST.hpp}|hyperpage}{53}
+\indexentry{Graphs/MST/MST.hpp@{Graphs/MST/MST.hpp}|hyperpage}{53}
+\indexentry{Misc/Equation solver plus/solver.hpp@{Misc/Equation solver plus/solver.hpp}|hyperpage}{53}
+\indexentry{solver.hpp@{solver.hpp}!equation\_solver@{equation\_solver}|hyperpage}{54}
+\indexentry{equation\_solver@{equation\_solver}!solver.hpp@{solver.hpp}|hyperpage}{54}
+\indexentry{solver.hpp@{solver.hpp}!is\_double\_zero@{is\_double\_zero}|hyperpage}{54}
+\indexentry{is\_double\_zero@{is\_double\_zero}!solver.hpp@{solver.hpp}|hyperpage}{54}
+\indexentry{Misc/Equation solver plus/solver.hpp@{Misc/Equation solver plus/solver.hpp}|hyperpage}{54}
+\indexentry{Misc/Interval Cover/cover.hpp@{Misc/Interval Cover/cover.hpp}|hyperpage}{56}
+\indexentry{cover.hpp@{cover.hpp}!cover@{cover}|hyperpage}{56}
+\indexentry{cover@{cover}!cover.hpp@{cover.hpp}|hyperpage}{56}
+\indexentry{Misc/Interval Cover/cover.hpp@{Misc/Interval Cover/cover.hpp}|hyperpage}{56}
+\indexentry{Misc/Knapsack/Knapsack.hpp@{Misc/Knapsack/Knapsack.hpp}|hyperpage}{57}
+\indexentry{Knapsack.hpp@{Knapsack.hpp}!knapsack@{knapsack}|hyperpage}{57}
+\indexentry{knapsack@{knapsack}!Knapsack.hpp@{Knapsack.hpp}|hyperpage}{57}
+\indexentry{Misc/Knapsack/Knapsack.hpp@{Misc/Knapsack/Knapsack.hpp}|hyperpage}{58}
+\indexentry{Misc/Longest Increasing Subsequence/lis.hpp@{Misc/Longest Increasing Subsequence/lis.hpp}|hyperpage}{58}
+\indexentry{lis.hpp@{lis.hpp}!lis@{lis}|hyperpage}{59}
+\indexentry{lis@{lis}!lis.hpp@{lis.hpp}|hyperpage}{59}
+\indexentry{Misc/Longest Increasing Subsequence/lis.hpp@{Misc/Longest Increasing Subsequence/lis.hpp}|hyperpage}{59}
+\indexentry{Misc/Polymul/FFT.hpp@{Misc/Polymul/FFT.hpp}|hyperpage}{60}
+\indexentry{FFT.hpp@{FFT.hpp}!PI@{PI}|hyperpage}{60}
+\indexentry{PI@{PI}!FFT.hpp@{FFT.hpp}|hyperpage}{60}
+\indexentry{FFT.hpp@{FFT.hpp}!ll@{ll}|hyperpage}{60}
+\indexentry{ll@{ll}!FFT.hpp@{FFT.hpp}|hyperpage}{60}
+\indexentry{FFT.hpp@{FFT.hpp}!FFT@{FFT}|hyperpage}{60}
+\indexentry{FFT@{FFT}!FFT.hpp@{FFT.hpp}|hyperpage}{60}
+\indexentry{FFT.hpp@{FFT.hpp}!INVERSE\_FFT@{INVERSE\_FFT}|hyperpage}{60}
+\indexentry{INVERSE\_FFT@{INVERSE\_FFT}!FFT.hpp@{FFT.hpp}|hyperpage}{60}
+\indexentry{FFT.hpp@{FFT.hpp}!Polymul@{Polymul}|hyperpage}{61}
+\indexentry{Polymul@{Polymul}!FFT.hpp@{FFT.hpp}|hyperpage}{61}
+\indexentry{FFT.hpp@{FFT.hpp}!Polymul\_Quadratic@{Polymul\_Quadratic}|hyperpage}{61}
+\indexentry{Polymul\_Quadratic@{Polymul\_Quadratic}!FFT.hpp@{FFT.hpp}|hyperpage}{61}
+\indexentry{Misc/Polymul/FFT.hpp@{Misc/Polymul/FFT.hpp}|hyperpage}{61}
+\indexentry{Prime\_Numbers/Prime\_Factorisation/Factorize.hpp@{Prime\_Numbers/Prime\_Factorisation/Factorize.hpp}|hyperpage}{63}
+\indexentry{Factorize.hpp@{Factorize.hpp}!ll@{ll}|hyperpage}{64}
+\indexentry{ll@{ll}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!u128@{u128}|hyperpage}{64}
+\indexentry{u128@{u128}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!ull@{ull}|hyperpage}{64}
+\indexentry{ull@{ull}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!f@{f}|hyperpage}{64}
+\indexentry{f@{f}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!fast\_factors@{fast\_factors}|hyperpage}{64}
+\indexentry{fast\_factors@{fast\_factors}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!fast\_prime@{fast\_prime}|hyperpage}{64}
+\indexentry{fast\_prime@{fast\_prime}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!gcd@{gcd}|hyperpage}{64}
+\indexentry{gcd@{gcd}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!is\_Probably\_Prime@{is\_Probably\_Prime}|hyperpage}{64}
+\indexentry{is\_Probably\_Prime@{is\_Probably\_Prime}!Factorize.hpp@{Factorize.hpp}|hyperpage}{64}
+\indexentry{Factorize.hpp@{Factorize.hpp}!Miller\_test@{Miller\_test}|hyperpage}{65}
+\indexentry{Miller\_test@{Miller\_test}!Factorize.hpp@{Factorize.hpp}|hyperpage}{65}
+\indexentry{Factorize.hpp@{Factorize.hpp}!modMult@{modMult}|hyperpage}{65}
+\indexentry{modMult@{modMult}!Factorize.hpp@{Factorize.hpp}|hyperpage}{65}
+\indexentry{Factorize.hpp@{Factorize.hpp}!nested@{nested}|hyperpage}{65}
+\indexentry{nested@{nested}!Factorize.hpp@{Factorize.hpp}|hyperpage}{65}
+\indexentry{Factorize.hpp@{Factorize.hpp}!Pollard\_Rho@{Pollard\_Rho}|hyperpage}{65}
+\indexentry{Pollard\_Rho@{Pollard\_Rho}!Factorize.hpp@{Factorize.hpp}|hyperpage}{65}
+\indexentry{Factorize.hpp@{Factorize.hpp}!powMod@{powMod}|hyperpage}{65}
+\indexentry{powMod@{powMod}!Factorize.hpp@{Factorize.hpp}|hyperpage}{65}
+\indexentry{Factorize.hpp@{Factorize.hpp}!prime\_with\_mult@{prime\_with\_mult}|hyperpage}{65}
+\indexentry{prime\_with\_mult@{prime\_with\_mult}!Factorize.hpp@{Factorize.hpp}|hyperpage}{65}
+\indexentry{Factorize.hpp@{Factorize.hpp}!primes@{primes}|hyperpage}{66}
+\indexentry{primes@{primes}!Factorize.hpp@{Factorize.hpp}|hyperpage}{66}
+\indexentry{Prime\_Numbers/Prime\_Factorisation/Factorize.hpp@{Prime\_Numbers/Prime\_Factorisation/Factorize.hpp}|hyperpage}{66}
+\indexentry{Prime\_Numbers/Prime\_Sieve/Sieve.hpp@{Prime\_Numbers/Prime\_Sieve/Sieve.hpp}|hyperpage}{68}
+\indexentry{Prime\_Numbers/Prime\_Sieve/Sieve.hpp@{Prime\_Numbers/Prime\_Sieve/Sieve.hpp}|hyperpage}{68}
+\indexentry{README.md@{README.md}|hyperpage}{70}
+\indexentry{Strings/Aho-\/corasick/Aho-\/Corasick.hpp@{Strings/Aho-\/corasick/Aho-\/Corasick.hpp}|hyperpage}{70}
+\indexentry{Strings/Aho-\/corasick/Aho-\/Corasick.hpp@{Strings/Aho-\/corasick/Aho-\/Corasick.hpp}|hyperpage}{70}
+\indexentry{Strings/Suffix-\/sorting/Suffix\_Sorting.hpp@{Strings/Suffix-\/sorting/Suffix\_Sorting.hpp}|hyperpage}{72}
+\indexentry{Strings/Suffix-\/sorting/Suffix\_Sorting.hpp@{Strings/Suffix-\/sorting/Suffix\_Sorting.hpp}|hyperpage}{73}

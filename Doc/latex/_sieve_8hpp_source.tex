@@ -1,0 +1,115 @@
+\doxysection{Sieve.\+hpp}
+\hypertarget{_sieve_8hpp_source}{}\label{_sieve_8hpp_source}\index{Prime\_Numbers/Prime\_Sieve/Sieve.hpp@{Prime\_Numbers/Prime\_Sieve/Sieve.hpp}}
+\mbox{\hyperlink{_sieve_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{Author:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PRIME\_SIEVE\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PRIME\_SIEVE\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<stddef.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ \ \ \ \ \ }}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ Class\ to\ compute\ all\ primes\ up\ to\ a\ number\ N.\ it\ provides\ the\ following\ functions:\ \ \ \ \ \ }}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ Prime\_Sieve(N)\ -\/\ the\ constructor\ takes\ a\ number\ N\ as\ an\ argument\ and\ computes\ which\ numbers\ up\ to\ N\ that\ are\ prime.\ }}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ get\_Number\_Of\_Primes()\ -\/\ returns\ the\ number\ of\ primes\ that\ are\ smaller\ than\ or\ equal\ to\ N.\ \ \ \ \ \ }}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ get\_Primes()\ returns\ a\ sorted\ vector\ of\ all\ numbers\ less\ than\ N\ that\ are\ prime.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ is\_Prime(x)\ -\/\ returns\ true\ if\ x\ is\ prime.\ Returns\ false\ otherwise.\ \ \ \ \ \ }}
+\DoxyCodeLine{00019\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_prime___sieve}{Prime\_Sieve}}\{}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<bool>\ is\_composite;}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<size\_t>\ primes;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ \mbox{\hyperlink{class_prime___sieve_aff024d887e9e41770db75f0713000a60}{get\_Primes}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_prime___sieve}{Prime\_Sieve}}(\textcolor{keywordtype}{size\_t}\ n);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_prime___sieve_a456710a65e13000321f4fcd97ecab4b2}{get\_Number\_Of\_Primes}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_prime___sieve_abf7cae6d2dc2b709817875b69f0625c1}{is\_Prime}}(\textcolor{keywordtype}{size\_t}\ i);}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \mbox{\hyperlink{class_prime___sieve_ac93ef2c170b5526b6f3ef9eb2856caa4}{Prime\_Sieve::Prime\_Sieve}}(\textcolor{keywordtype}{size\_t}\ n)\ :\ is\_composite(n+1)\{}
+\DoxyCodeLine{00068\ \ \ \ \ n++;}
+\DoxyCodeLine{00069\ \ \ \ \ is\_composite[0]\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//0\ is\ not\ a\ composite\ number,\ however,\ it\ is\ not\ prime\ either.}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}(n\ >\ 1)\ is\_composite[1]\ =\ \textcolor{keyword}{true};\ \ \ \textcolor{comment}{//The\ same\ applies\ to\ the\ number\ 1.}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{if}(n\ >\ 2)\ primes.push\_back(2);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ x\ =\ 4;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{while}(x\ <\ n)\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ is\_composite[x]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ x+=2;}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 3;\ i\ <\ n;\ i+=2)\{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(is\_composite[i])\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ primes.push\_back(i);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ mult\ =\ i*i;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{_points_8hpp_a6da0dc56faecc35f650a255ae8eee946}{add}}\ =\ 2*i;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(mult\ <\ n)\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ is\_composite[mult]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ mult\ +=\ \mbox{\hyperlink{_points_8hpp_a6da0dc56faecc35f650a255ae8eee946}{add}};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_prime___sieve_abf7cae6d2dc2b709817875b69f0625c1}{Prime\_Sieve::is\_Prime}}(\textcolor{keywordtype}{size\_t}\ i)\{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ !is\_composite[i];\ }
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_prime___sieve_a456710a65e13000321f4fcd97ecab4b2}{Prime\_Sieve::get\_Number\_Of\_Primes}}()\{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ primes.size();}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{const}\ std::vector<size\_t>\&\ \mbox{\hyperlink{class_prime___sieve_aff024d887e9e41770db75f0713000a60}{Prime\_Sieve::get\_Primes}}()\{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ primes;}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

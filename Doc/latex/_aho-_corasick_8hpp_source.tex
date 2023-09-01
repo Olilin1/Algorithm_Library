@@ -1,0 +1,188 @@
+\doxysection{Aho-\/\+Corasick.hpp}
+\hypertarget{_aho-_corasick_8hpp_source}{}\label{_aho-_corasick_8hpp_source}\index{Strings/Aho-\/corasick/Aho-\/Corasick.hpp@{Strings/Aho-\/corasick/Aho-\/Corasick.hpp}}
+\mbox{\hyperlink{_aho-_corasick_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{Author:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ AHO\_CORASICK\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ AHO\_CORASICK\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<queue>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00013\ \textcolor{comment}{A\ class\ that\ implements\ the\ Aho-\/Corasick\ string\ matching\ algorithm.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{It\ provides\ three\ functions\ of\ interest:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{}}
+\DoxyCodeLine{00016\ \textcolor{comment}{add\_string(s)\ adds\ a\ string\ pattern\ to\ be\ matched\ against.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{construct\_automaton()\ constructs\ the\ automaton\ that\ will\ be\ used\ in\ the\ string\ matching.\ Call\ this\ once\ all\ strings\ you\ want\ to\ match\ against\ have\ been\ added.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{search(s)\ searches\ through\ the\ string\ s.\ Returns\ a\ vector\ V\ of\ vectors\ containing\ the\ indicies\ in\ s\ where\ a\ pattern\ was\ sucessfully\ matched.\ V[i]\ contains\ the\ positions\ of\ where\ the\ ith\ string\ added\ match.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_trie_automaton}{TrieAutomaton}}\{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }Node\{}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<int>\ terminal;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ depth;}
+\DoxyCodeLine{00025\ \ \ \ \ Node*\ suffixNode\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00026\ \ \ \ \ Node*\ terminalChain;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{char}\ nodeChar\ =\ \textcolor{charliteral}{'X'};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::vector<Node*>\ transition\ =\ std::vector<Node*>(128,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ Node*\ root\ =\ \textcolor{keyword}{new}\ Node();}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{size\_t}\ stringIndex\ =\ 0;}
+\DoxyCodeLine{00034\ std::vector<Node*>\ nodes;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \mbox{\hyperlink{class_trie_automaton_a11af470f38d338112b0891cb760c14a5}{TrieAutomaton}}();}
+\DoxyCodeLine{00038\ \mbox{\hyperlink{class_trie_automaton_a1ca5b2336165295678847e5db99ad767}{\string~TrieAutomaton}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trie_automaton_a533690bf9f65efa96cbab9bba0495ceb}{add\_string}}(std::string\ \textcolor{keyword}{const}\ \&\ s);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trie_automaton_a215527ba8cf806be910f403e63c9386c}{construct\_automaton}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ std::vector<std::vector<size\_t>>\ \mbox{\hyperlink{class_trie_automaton_a7bdb794ac21d705e384ae4122f5ca664}{search}}(std::string\ \textcolor{keyword}{const}\ \&\ s);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trie_automaton_a533690bf9f65efa96cbab9bba0495ceb}{TrieAutomaton::add\_string}}(std::string\ \textcolor{keyword}{const}\ \&\ s)\{}
+\DoxyCodeLine{00095\ \ \ \ \ Node*\ at\ =\ root;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{char}\ c\ :\ s)\{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(at-\/>transition[c]\ ==\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ nodes.push\_back(newNode);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>depth\ =\ at-\/>depth\ +\ 1;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ newNode-\/>nodeChar\ =\ c;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ at-\/>transition[c]\ =\ newNode;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ at\ =\ at-\/>transition[c];}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ at-\/>terminal.push\_back(stringIndex);}
+\DoxyCodeLine{00109\ \ \ \ \ stringIndex++;}
+\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_trie_automaton_a215527ba8cf806be910f403e63c9386c}{TrieAutomaton::construct\_automaton}}()\{}
+\DoxyCodeLine{00113\ \ \ \ \ Node*\ at;}
+\DoxyCodeLine{00114\ \ \ \ \ std::queue<Node*>\ bfsQ;}
+\DoxyCodeLine{00115\ \ \ \ \ bfsQ.push(root);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{while}(!bfsQ.empty())\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ at\ =\ bfsQ.front();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ bfsQ.pop();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ c\ =\ 0;\ c\ <\ 128;\ c++)\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(at-\/>transition[c]\ ==\ \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(at\ ==\ root)\ at-\/>transition[c]\ =\ root;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ at-\/>transition[c]\ =\ at-\/>suffixNode-\/>transition[c];}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(at\ ==\ root)\ at-\/>transition[c]-\/>suffixNode\ =\ root;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ at-\/>transition[c]-\/>suffixNode\ =\ at-\/>suffixNode-\/>transition[c];\ \textcolor{comment}{//Could\ probably\ make\ some\ chain\ here\ during\ construction.}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{//Suffix\ chain}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{if}(!at-\/>suffixNode-\/>transition[c]-\/>terminal.empty())\{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ at-\/>transition[c]-\/>terminalChain\ =\ at-\/>suffixNode-\/>transition[c];}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ at-\/>transition[c]-\/>terminalChain\ =\ at-\/>suffixNode-\/>transition[c]-\/>terminalChain;}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{if}(at\ ==\ root)\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ at-\/>transition[c]-\/>terminalChain\ =\ root;}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bfsQ.push(at-\/>transition[c]);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ std::vector<std::vector<size\_t>>\ \mbox{\hyperlink{class_trie_automaton_a7bdb794ac21d705e384ae4122f5ca664}{TrieAutomaton::search}}(std::string\ \textcolor{keyword}{const}\ \&\ s)\{}
+\DoxyCodeLine{00148\ \ \ \ \ Node*\ at\ =\ root;}
+\DoxyCodeLine{00149\ \ \ \ \ std::vector<std::vector<size\_t>>\ ans(stringIndex);}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ s.length();\ i++)\{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ c\ =\ s[i];}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ at\ =\ at-\/>transition[c];}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ Node*\ suffixLinking\ =\ at;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ Node*\ prev\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(suffixLinking\ !=\ root)\{\ \ \textcolor{comment}{//Somehow\ safe\ the\ previous\ terminal\ suffix\ for\ all\ nodes\ to\ save\ time.}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(suffixLinking\ ==\ prev)\ std::cerr\ <<\ \textcolor{stringliteral}{"{}Linking\ err"{}};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ index\ :\ suffixLinking-\/>terminal)\{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ans[index].push\_back(i\ -\/\ suffixLinking-\/>depth\ +\ 1);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ prev\ =\ suffixLinking;}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ suffixLinking\ =\ suffixLinking-\/>terminalChain;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ ans;}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \mbox{\hyperlink{class_trie_automaton_a11af470f38d338112b0891cb760c14a5}{TrieAutomaton::TrieAutomaton}}()\{}
+\DoxyCodeLine{00171\ \ \ \ \ root-\/>suffixNode\ =\ root;}
+\DoxyCodeLine{00172\ \ \ \ \ root-\/>depth\ =\ 0;}
+\DoxyCodeLine{00173\ \ \ \ \ root-\/>terminalChain\ =\ root;}
+\DoxyCodeLine{00174\ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \mbox{\hyperlink{class_trie_automaton_a1ca5b2336165295678847e5db99ad767}{TrieAutomaton::\string~TrieAutomaton}}()\{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{delete}\ root;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ x\ :\ nodes)\{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ x;}
+\DoxyCodeLine{00180\ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

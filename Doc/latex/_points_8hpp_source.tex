@@ -1,0 +1,141 @@
+\doxysection{Points.\+hpp}
+\hypertarget{_points_8hpp_source}{}\label{_points_8hpp_source}\index{Geometry/Points/Points.hpp@{Geometry/Points/Points.hpp}}
+\mbox{\hyperlink{_points_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{Author:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ POINTS\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ POINTS\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<cmath>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point}{Point}}\{}
+\DoxyCodeLine{00013\ \ \ \ \ T\ \mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}},\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_point_a090d10b8d230450127c22129f097f46e}{length}}()\{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}*\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}*\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}});}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_point_ab406d5e4072e3f8f8dfca3e52cbebe5c}{magnitude}}()\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_a090d10b8d230450127c22129f097f46e}{length}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ T\ \mbox{\hyperlink{struct_point_afb4f0db6af185790f57cf5b7df82805f}{lengthSquared}}()\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}*\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}*\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ T\ \mbox{\hyperlink{struct_point_a50f90e426acf39931f8f213730041b4f}{magnitudeSquared}}()\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_afb4f0db6af185790f57cf5b7df82805f}{lengthSquared}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_point_ad2361b23f63df6896680aeeb358eaaf1}{operator==}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ other)\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ ==\ other.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ \&\&\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ ==\ other.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_point_af8ceb997ef8b2e8d320d27760428c45d}{operator!=}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ other)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ !=\ other.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ ||\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ !=\ other.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point<T>}}\ \mbox{\hyperlink{struct_point_a4dc387b571aa256ec60c757ef3ed8705}{operator+}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ other)\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ other.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}},\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ +\ other.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point<T>}}\ \mbox{\hyperlink{struct_point_ad32f5e8eb25623522c7e8462b070b60c}{operator-\/}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ other)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ -\/\ other.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}},\ \mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ other.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\};}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00049\ std::ostream\&\ \mbox{\hyperlink{_points_8hpp_a46e35c62361c10f422f545648de68697}{operator<<\ }}(std::ostream\&\ out,\ \mbox{\hyperlink{struct_point}{Point<T>}}\&\ point)\{}
+\DoxyCodeLine{00050\ \ \ \ \ out\ <<\ point.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ <<\ \textcolor{charliteral}{'\ '}\ <<\ point.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00052\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00055\ std::istream\&\ \mbox{\hyperlink{_points_8hpp_a1a6b09d387a4ee456d7d972a51bef2db}{operator>>\ }}(std::istream\&\ in,\ \mbox{\hyperlink{struct_point}{Point<T>}}\&\ point)\{}
+\DoxyCodeLine{00056\ \ \ \ \ in\ >>\ point.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ >>\ point.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ in;}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00061\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \mbox{\hyperlink{_points_8hpp_a6da0dc56faecc35f650a255ae8eee946}{add}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \{a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ b.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}},\ a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ +\ b.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\};}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \{a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ -\/\ b.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}},\ a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ b.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\};}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00071\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \mbox{\hyperlink{_points_8hpp_a6c52aed9320f5d35435b1dc11548755b}{scalar\_multiplication}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ point,\ T\ scalar)\{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ \{point.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ *\ scalar,\ point.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ *\ scalar\};}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00076\ T\ \mbox{\hyperlink{_points_8hpp_a0d7c0a3622c9be8f9f7b27b4b68e419f}{dot\_product}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ *\ b.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ *\ b.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00081\ T\ \mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ *\ b.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ b.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ *\ a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_points_8hpp_a1ca5c7ce2ea150b1a84f9c3f7ce6f3b9}{length}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a)\{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}*a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}*a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}});}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_points_8hpp_a55b54af59d02021cfbcc62bfa1fc9974}{lengthSquared}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a)\{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}*a.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}\ +\ a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}*a.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}};}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_points_8hpp_a2f931d42e85ac2fb75b750ededdfcc45}{dist}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_points_8hpp_a1ca5c7ce2ea150b1a84f9c3f7ce6f3b9}{length}}(\mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(a,\ b));}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_points_8hpp_aca9d52128db50fb6edc894144390fd02}{distSquared}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_points_8hpp_a55b54af59d02021cfbcc62bfa1fc9974}{lengthSquared}}(\mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(a,\ b));}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{_points_8hpp_a66f584545795d0cdd8496b95c58a5720}{angle}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ atan2(\mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(a,b),\ \mbox{\hyperlink{_points_8hpp_a0d7c0a3622c9be8f9f7b27b4b68e419f}{dot\_product}}(a,b));}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_points_8hpp_a461231290f29291c6f31441771fbc489}{intersect}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ p1,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ p2,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ q1,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ q2)\{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ (((((p1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/q1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (p2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ q1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ -\/\ ((p2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/q1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (p1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ q1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ >\ 0)\ ==\ \textcolor{comment}{//First\ determinant}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ (((p1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/q2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (p2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ q2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ -\/\ ((p2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/q2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (p1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ q2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ <\ 0))\ \&\&\ \textcolor{comment}{//Second}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ ((((q1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/p1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (q2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ p1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ -\/\ ((q2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/p1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (q1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ p1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ >\ 0)\ ==\ \textcolor{comment}{//Third\ determinant}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ (((q1.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/p2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (q2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ p2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ -\/\ ((q2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}}-\/p2.\mbox{\hyperlink{struct_point_a401d07562afaf0079121218025e66b76}{x}})\ *\ (q1.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}\ -\/\ p2.\mbox{\hyperlink{struct_point_a65146418a33ebb2cd9acb85cade60ac9}{y}}))\ <\ 0))}
+\DoxyCodeLine{00116\ \ \ \ \ );}
+\DoxyCodeLine{00117\ \}\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/*\ Source\ that\ this\ works}}
+\DoxyCodeLine{00119\ \textcolor{comment}{https://stackoverflow.com/a/3842157}}
+\DoxyCodeLine{00120\ \textcolor{comment}{http://www.cs.cmu.edu/\string~quake/robust.html}}
+\DoxyCodeLine{00121\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00124\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_points_8hpp_ad5cf14c233b86492ab05d7dbeb7a931d}{simple\_polygon}}(std::vector<\mbox{\hyperlink{struct_point}{Point<T>}}>\ \textcolor{keyword}{const}\ \&\ v)\{}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ n\ =\ v.size();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ ans\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <\ n;\ i++)\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j\ =\ (i\ ==\ 6\ ?\ 1\ :\ 0);\ j\ <\ i-\/1;\ j++)\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ ans\ \&=\ !\mbox{\hyperlink{_points_8hpp_a461231290f29291c6f31441771fbc489}{intersect}}(v[i],\ v[(i+1)\%n],\ v[j],\ v[(j+1)\%n]);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ ans;}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

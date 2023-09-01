@@ -1,0 +1,67 @@
+\doxysection{shortest\+\_\+path.\+hpp}
+\hypertarget{shortest__path_8hpp_source}{}\label{shortest__path_8hpp_source}\index{Graphs/Dijkstra/shortest\_path.hpp@{Graphs/Dijkstra/shortest\_path.hpp}}
+\mbox{\hyperlink{shortest__path_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SHORTEST\_PATH\_DIJKSTRA\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SHORTEST\_PATH\_DIJKSTRA\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<queue>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<limits>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include<stddef.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00015\ \textcolor{comment}{My\ implementation\ of\ the\ dijkstra\ algorithm.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{Returns\ a\ vector\ of\ pairs\ where\ the\ second\ item\ of\ each\ element\ i\ is\ the\ distance\ to\ the\ node\ i\ and\ the\ first\ item\ is\ the\ node\ you\ go\ to\ i\ from.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{If\ there\ is\ no\ way\ to\ reach\ a\ node\ i\ then\ v[i].first\ and\ v[i].second\ is\ set\ to\ the\ max\ value\ of\ size\_t\ and\ unsigned\ long\ long\ int\ respectively.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{The\ start\ node's\ parent\ is\ set\ to\ the\ maximum\ value\ of\ size\_t}}
+\DoxyCodeLine{00019\ \textcolor{comment}{Takes\ as\ input\ the\ graph\ represented\ in\ adjacency\ list\ form\ and\ the\ node\ we\ start\ from.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{Time\ complexity:\ O(m\ *\ log(n))\ where\ n\ is\ the\ amount\ of\ nodes\ in\ the\ graph\ and\ m\ is\ the\ amount\ of\ edges.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{shortest__path_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}};}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ node\ first}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ parent\ first}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ distance\ second}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ weight\ second}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ std::vector<std::pair<size\_t,\ ull>>\ \mbox{\hyperlink{shortest__path_8hpp_a786d125164a5d42b57d6626bafd36e90}{dijkstra\_shortest\_path}}(\textcolor{keyword}{const}\ std::vector<std::vector<std::pair<size\_t,\ ull>>>\&\ adjaceny\_list,\ \textcolor{keywordtype}{size\_t}\ startNode)\{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }Compare\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()\ (std::pair<size\_t,\ ull>\ a,\ std::pair<size\_t,\ ull>\ b)\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a.distance\ >\ b.distance;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<std::pair<size\_t,\ ull>>\ parent\_dist\_pair(adjaceny\_list.size(),\ \{std::numeric\_limits<size\_t>::max(),\ std::numeric\_limits<ull>::max()\});}
+\DoxyCodeLine{00037\ \ \ \ \ std::priority\_queue<std::pair<size\_t,\ ull>,\ std::vector<std::pair<size\_t,\ ull>>,\ Compare>\ pq;}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ pq.push(\{startNode,\ 0\});}
+\DoxyCodeLine{00040\ \ \ \ \ parent\_dist\_pair[startNode].distance\ =\ 0;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{while}(!pq.empty())\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::pair<size\_t,\ ull>\ p\ =\ pq.top();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ pq.pop();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(p.distance\ !=\ parent\_dist\_pair[p.node].distance)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ edge\ :\ adjaceny\_list[p.node])\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(parent\_dist\_pair[edge.node].distance\ >\ p.distance\ +\ edge.weight)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pq.push(\{edge.node,\ p.distance\ +\ edge.weight\});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\_dist\_pair[edge.node].distance\ =\ p.distance\ +\ edge.weight;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ parent\_dist\_pair[edge.node].parent\ =\ p.node;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ parent\_dist\_pair;}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

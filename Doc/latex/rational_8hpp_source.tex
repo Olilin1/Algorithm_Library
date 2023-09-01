@@ -1,0 +1,119 @@
+\doxysection{rational.\+hpp}
+\hypertarget{rational_8hpp_source}{}\label{rational_8hpp_source}\index{Arithmetic/Rational arithmetic/rational.hpp@{Arithmetic/Rational arithmetic/rational.hpp}}
+\mbox{\hyperlink{rational_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//A\ datatype\ that\ stores\ and\ performs\ operations\ on\ fractions.\ T\ must\ implement\ the\ +,-\/,*,/,<<,>>\ operators.\ }}
+\DoxyCodeLine{00009\ \textcolor{comment}{//In\ addition\ to\ that,\ euclids\ algorithm\ needs\ to\ work\ for\ T.\ It\ must\ also\ be\ possible\ to\ use\ T\ with\ the\ std::abs\ function.}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rational}{Rational}}\{}
+\DoxyCodeLine{00012\ \ \ \ \ T\ \mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}},\ \mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_aa297a1dd1c9cce8da98c5c425f8cd847}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_a16ca3ceb2a0f5226bebb84b4ce962a90}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_ad3563b70d8eb6df7c6c184eae2b0663c}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_a0e9638f705613cba22ccab5d5d45ab6b}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{normalise}}();}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00023\ T\ \mbox{\hyperlink{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447}{gcd}}(T\ a,\ T\ b);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00026\ std::istream\ \&\ \mbox{\hyperlink{rational_8hpp_a695f7b6c1d155ebcd3c397288eb8be82}{operator>>}}(std::istream\ \&\ is,\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ m);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00029\ std::ostream\ \&\ \mbox{\hyperlink{rational_8hpp_aa1b4579ee3513eb82c8b7436be5a18f5}{operator<<}}(std::ostream\ \&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \&\ m);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_aa297a1dd1c9cce8da98c5c425f8cd847}{Rational<T>::operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ sum;}
+\DoxyCodeLine{00034\ \ \ \ \ sum.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}}\ =\ denominator\ *\ other.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00035\ \ \ \ \ sum.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ =\ numerator\ *\ other.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}}\ +\ other.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ *\ denominator;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ sum.\mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{normalise}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_a16ca3ceb2a0f5226bebb84b4ce962a90}{Rational<T>::operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ difference;}
+\DoxyCodeLine{00044\ \ \ \ \ difference.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}}\ =\ denominator\ *\ other.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00045\ \ \ \ \ difference.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ =\ numerator\ *\ other.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}}\ -\/\ other.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ *\ denominator;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ difference.\mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{normalise}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ difference;}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00052\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_ad3563b70d8eb6df7c6c184eae2b0663c}{Rational<T>::operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ product;}
+\DoxyCodeLine{00054\ \ \ \ \ product.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}}\ =\ denominator\ *\ other.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00055\ \ \ \ \ product.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ =\ numerator\ *\ other.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ product.\mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{normalise}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ product;}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00062\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \mbox{\hyperlink{struct_rational_a0e9638f705613cba22ccab5d5d45ab6b}{Rational<T>::operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ other)\textcolor{keyword}{\ const}\{}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ swapped;}
+\DoxyCodeLine{00064\ \ \ \ \ swapped.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}}\ =\ other.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}};}
+\DoxyCodeLine{00065\ \ \ \ \ swapped.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ =\ other.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ ans\ =\ *(\textcolor{keyword}{this})\ *\ swapped;}
+\DoxyCodeLine{00068\ \ \ \ \ ans.\mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{normalise}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ ans;}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{Rational<T>::normalise}}()\{}
+\DoxyCodeLine{00074\ \ \ \ \ T\ divisor\ =\ \mbox{\hyperlink{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447}{gcd}}(denominator,\ numerator);}
+\DoxyCodeLine{00075\ \ \ \ \ denominator\ /=\ divisor;}
+\DoxyCodeLine{00076\ \ \ \ \ numerator\ /=\ divisor;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}(denominator\ <\ 0\ \&\&\ numerator\ <\ 0)\{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ denominator\ =\ -\/denominator;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ numerator\ =\ -\/numerator;}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(denominator\ <\ 0)\{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ denominator\ =\ -\/denominator;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ numerator\ =\ -\/numerator;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00089\ std::istream\ \&\ \mbox{\hyperlink{rational_8hpp_a695f7b6c1d155ebcd3c397288eb8be82}{operator>>}}(std::istream\ \&\ is,\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\&\ m)\{}
+\DoxyCodeLine{00090\ \ \ \ \ is\ >>\ m.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ >>\ m.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00091\ \ \ \ \ m.\mbox{\hyperlink{struct_rational_a21e86b56979e04b4c236771a76158dc7}{normalise}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ is;}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00096\ std::ostream\ \&\ \mbox{\hyperlink{rational_8hpp_aa1b4579ee3513eb82c8b7436be5a18f5}{operator<<}}(std::ostream\ \&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rational}{Rational<T>}}\ \&\ m)\{}
+\DoxyCodeLine{00097\ \ \ \ \ os\ <<\ m.\mbox{\hyperlink{struct_rational_ada69479a0f522b8a0513744b4932b150}{numerator}}\ <<\ \textcolor{stringliteral}{"{}\ /\ "{}}\ <<\ m.\mbox{\hyperlink{struct_rational_a0ad418811c5504667d499c7c21175d37}{denominator}};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00102\ T\ \mbox{\hyperlink{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447}{gcd}}(T\ a,\ T\ b)\{}
+\DoxyCodeLine{00103\ \ \ \ \ a\ =\ std::abs(a);}
+\DoxyCodeLine{00104\ \ \ \ \ b\ =\ std::abs(b);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{if}(a\ >\ b)\{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::swap(a,b);}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ 0)}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447}{gcd}}(b\ \%\ a,\ a);}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ }
+
+\end{DoxyCode}

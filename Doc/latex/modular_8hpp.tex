@@ -1,0 +1,105 @@
+\doxysection{Arithmetic/\+Modular-\/\+Arithmetic/modular.hpp File Reference}
+\hypertarget{modular_8hpp}{}\label{modular_8hpp}\index{Arithmetic/Modular-\/Arithmetic/modular.hpp@{Arithmetic/Modular-\/Arithmetic/modular.hpp}}
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long long int \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}
+\item 
+typedef unsigned long long int \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}
+\item 
+typedef \+\_\+\+\_\+uint128\+\_\+t \mbox{\hyperlink{modular_8hpp_a99f41a347e7d272c76fc2c4650268ec0}{u128}}
+\item 
+typedef \+\_\+\+\_\+int128\+\_\+t \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} \mbox{\hyperlink{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}{mod}} (const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} a, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} \mbox{\hyperlink{modular_8hpp_a203badec19a57503c4dfef74093ae74d}{mod\+Mult}} (const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} a, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} b, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} \mbox{\hyperlink{modular_8hpp_a8d20d404ec3333b8ce5d1373b720e648}{mod\+Add}} (const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} a, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} b, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} \mbox{\hyperlink{modular_8hpp_a02438309ab9061b2bb6236d350a178b1}{mod\+Sub}} (const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} a, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} b, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} \mbox{\hyperlink{modular_8hpp_aae159a89ce396bcc5c3663e9016ea98e}{gcd}} (\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} a, \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} b, \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} \&x0, \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} \&y0)
+\item 
+\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} \mbox{\hyperlink{modular_8hpp_aefa6d397c68decac67c9ba7a97df7864}{mod\+Inverse}} (const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} b, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} \mbox{\hyperlink{modular_8hpp_a42352a9c701a9c79c39aed28b4b73491}{mod\+Div}} (const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} a, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} b, const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}\label{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a} 
+\index{modular.hpp@{modular.hpp}!i128@{i128}}
+\index{i128@{i128}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{i128}{i128}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+int128\+\_\+t \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}
+
+\Hypertarget{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}\label{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7} 
+\index{modular.hpp@{modular.hpp}!ll@{ll}}
+\index{ll@{ll}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{ll}{ll}}
+{\footnotesize\ttfamily typedef long long int \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}}
+
+\Hypertarget{modular_8hpp_a99f41a347e7d272c76fc2c4650268ec0}\label{modular_8hpp_a99f41a347e7d272c76fc2c4650268ec0} 
+\index{modular.hpp@{modular.hpp}!u128@{u128}}
+\index{u128@{u128}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{u128}{u128}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+uint128\+\_\+t \mbox{\hyperlink{modular_8hpp_a99f41a347e7d272c76fc2c4650268ec0}{u128}}}
+
+\Hypertarget{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}\label{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4} 
+\index{modular.hpp@{modular.hpp}!ull@{ull}}
+\index{ull@{ull}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{ull}{ull}}
+{\footnotesize\ttfamily typedef unsigned long long int \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{modular_8hpp_aae159a89ce396bcc5c3663e9016ea98e}\label{modular_8hpp_aae159a89ce396bcc5c3663e9016ea98e} 
+\index{modular.hpp@{modular.hpp}!gcd@{gcd}}
+\index{gcd@{gcd}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} gcd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{a,  }\item[{\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{b,  }\item[{\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} \&}]{x0,  }\item[{\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} \&}]{y0 }\end{DoxyParamCaption})}
+
+\Hypertarget{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}\label{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113} 
+\index{modular.hpp@{modular.hpp}!mod@{mod}}
+\index{mod@{mod}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{mod()}{mod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} mod (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{a,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{modular_8hpp_a8d20d404ec3333b8ce5d1373b720e648}\label{modular_8hpp_a8d20d404ec3333b8ce5d1373b720e648} 
+\index{modular.hpp@{modular.hpp}!modAdd@{modAdd}}
+\index{modAdd@{modAdd}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{modAdd()}{modAdd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} mod\+Add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{a,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{b,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{modular_8hpp_a42352a9c701a9c79c39aed28b4b73491}\label{modular_8hpp_a42352a9c701a9c79c39aed28b4b73491} 
+\index{modular.hpp@{modular.hpp}!modDiv@{modDiv}}
+\index{modDiv@{modDiv}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{modDiv()}{modDiv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} mod\+Div (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{a,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{b,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{modular_8hpp_aefa6d397c68decac67c9ba7a97df7864}\label{modular_8hpp_aefa6d397c68decac67c9ba7a97df7864} 
+\index{modular.hpp@{modular.hpp}!modInverse@{modInverse}}
+\index{modInverse@{modInverse}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{modInverse()}{modInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}} mod\+Inverse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{b,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{modular_8hpp_a203badec19a57503c4dfef74093ae74d}\label{modular_8hpp_a203badec19a57503c4dfef74093ae74d} 
+\index{modular.hpp@{modular.hpp}!modMult@{modMult}}
+\index{modMult@{modMult}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{modMult()}{modMult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} mod\+Mult (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{a,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{b,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{modular_8hpp_a02438309ab9061b2bb6236d350a178b1}\label{modular_8hpp_a02438309ab9061b2bb6236d350a178b1} 
+\index{modular.hpp@{modular.hpp}!modSub@{modSub}}
+\index{modSub@{modSub}!modular.hpp@{modular.hpp}}
+\doxysubsubsection{\texorpdfstring{modSub()}{modSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} mod\+Sub (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{a,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{b,  }\item[{const \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

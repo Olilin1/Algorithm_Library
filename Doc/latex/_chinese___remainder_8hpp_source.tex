@@ -1,0 +1,39 @@
+\doxysection{Chinese\+\_\+\+Remainder.\+hpp}
+\hypertarget{_chinese___remainder_8hpp_source}{}\label{_chinese___remainder_8hpp_source}\index{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp@{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp}}
+\mbox{\hyperlink{_chinese___remainder_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CHINESE\_REMAINDER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CHINESE\_REMAINDER\_HPP}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{modular_8hpp}{Arithmetic\(\backslash\)Modular-\/Arithmetic\(\backslash\)modular.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_chinese___remainder_8hpp_ae5acec96921c19e2b5fb2d23ea7b7f1f}{Solve\_System\_Of\_Congruencies}}(std::vector<std::pair<long\ long\ int,\ long\ long\ int>>\ equations,\ \textcolor{keywordtype}{bool}\ co\_prime\ =\ \textcolor{keyword}{false})\{}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}(co\_prime)\ \textcolor{keywordflow}{goto}\ start\_solving;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ start\_solving:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ lcm\ =\ 1;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ pair\ :\ equations)\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ lcm\ *=\ pair.second;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ ans\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\&\ pair\ :\ equations)\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ Mi\ =\ lcm/pair.second;\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ xi\ =\ Mi\ \%\ pair.second;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ bi\ =\ \mbox{\hyperlink{modular_8hpp_aefa6d397c68decac67c9ba7a97df7864}{modInverse}}(xi,\ pair.second);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ yi\ =\ (bi\ *\ Mi)\ \%\ lcm;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ ans\ =\ \mbox{\hyperlink{modular_8hpp_a8d20d404ec3333b8ce5d1373b720e648}{modAdd}}(ans,\ \mbox{\hyperlink{modular_8hpp_a203badec19a57503c4dfef74093ae74d}{modMult}}(pair.first,\ yi,\ lcm),\ lcm);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ ans;}
+\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

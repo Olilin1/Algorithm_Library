@@ -1,0 +1,143 @@
+\doxysection{Prime\+\_\+\+Numbers/\+Prime\+\_\+\+Factorisation/\+Factorize.hpp File Reference}
+\hypertarget{_factorize_8hpp}{}\label{_factorize_8hpp}\index{Prime\_Numbers/Prime\_Factorisation/Factorize.hpp@{Prime\_Numbers/Prime\_Factorisation/Factorize.hpp}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Prime\+\_\+\+Numbers\textbackslash{}\+Prime\+\_\+\+Sieve\textbackslash{}\+Sieve.\+hpp"{}}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long long int \mbox{\hyperlink{_factorize_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}
+\item 
+typedef unsigned long long int \mbox{\hyperlink{_factorize_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}
+\item 
+typedef \+\_\+\+\_\+uint128\+\_\+t \mbox{\hyperlink{_factorize_8hpp_a99f41a347e7d272c76fc2c4650268ec0}{u128}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} \mbox{\hyperlink{_factorize_8hpp_ac4a0e714cff75b2611438f354282cf22}{mod\+Mult}} (const \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} a, const \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} b, const \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} \mbox{\hyperlink{_factorize_8hpp_a3033dd9e485ac116c687adf9d7057543}{pow\+Mod}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} base, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} exp, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} m)
+\item 
+bool \mbox{\hyperlink{_factorize_8hpp_ab3023e2480aca39461c5dc64970f2a0a}{Miller\+\_\+test}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} n, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} a, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} d, int s)
+\item 
+bool \mbox{\hyperlink{_factorize_8hpp_aa5fd5bc95a653e6bd99e82b517d70e63}{is\+\_\+\+Probably\+\_\+\+Prime}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} n, int k=5)
+\item 
+\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} \mbox{\hyperlink{_factorize_8hpp_a051393f56fc212b221a048ea807867bd}{gcd}} (\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} a, \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} b)
+\item 
+\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} \mbox{\hyperlink{_factorize_8hpp_a7fe1c2c010cbb6487164a4bc1a0be442}{f}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} x, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} c, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} m)
+\item 
+\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} \mbox{\hyperlink{_factorize_8hpp_aab24ba9257edea918fcb6c34be55b261}{Pollard\+\_\+\+Rho}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} n, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} c=1, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} x0=2)
+\item 
+vector$<$ pair$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ $>$ \mbox{\hyperlink{_factorize_8hpp_a7d87970a2b1e98824803e8d238a974bc}{prime\+\_\+with\+\_\+mult}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} n)
+\item 
+vector$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ \mbox{\hyperlink{_factorize_8hpp_a625e677fedbd7bbbe67c1c77c27c144e}{fast\+\_\+prime}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} n)
+\item 
+void \mbox{\hyperlink{_factorize_8hpp_a81d41356cb45ae7f36213f3899632cbf}{nested}} (vector$<$ pair$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ $>$ \&v, const vector$<$ pair$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ $>$ \&org, int depth, vector$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ \&ans)
+\item 
+vector$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ \mbox{\hyperlink{_factorize_8hpp_a0645f63c3de74ed744e22c006e9651f3}{fast\+\_\+factors}} (\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} n)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ size\+\_\+t $>$ \mbox{\hyperlink{_factorize_8hpp_a2cc13209dcbaeded21a0c6b3572554d9}{primes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_factorize_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}\label{_factorize_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7} 
+\index{Factorize.hpp@{Factorize.hpp}!ll@{ll}}
+\index{ll@{ll}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{ll}{ll}}
+{\footnotesize\ttfamily typedef long long int \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}}
+
+\Hypertarget{_factorize_8hpp_a99f41a347e7d272c76fc2c4650268ec0}\label{_factorize_8hpp_a99f41a347e7d272c76fc2c4650268ec0} 
+\index{Factorize.hpp@{Factorize.hpp}!u128@{u128}}
+\index{u128@{u128}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{u128}{u128}}
+{\footnotesize\ttfamily typedef \+\_\+\+\_\+uint128\+\_\+t \mbox{\hyperlink{modular_8hpp_a99f41a347e7d272c76fc2c4650268ec0}{u128}}}
+
+\Hypertarget{_factorize_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}\label{_factorize_8hpp_a6663709af6a38c4212fbcd6f2a6552a4} 
+\index{Factorize.hpp@{Factorize.hpp}!ull@{ull}}
+\index{ull@{ull}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{ull}{ull}}
+{\footnotesize\ttfamily typedef unsigned long long int \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_factorize_8hpp_a7fe1c2c010cbb6487164a4bc1a0be442}\label{_factorize_8hpp_a7fe1c2c010cbb6487164a4bc1a0be442} 
+\index{Factorize.hpp@{Factorize.hpp}!f@{f}}
+\index{f@{f}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} f (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{x,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{c,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_factorize_8hpp_a0645f63c3de74ed744e22c006e9651f3}\label{_factorize_8hpp_a0645f63c3de74ed744e22c006e9651f3} 
+\index{Factorize.hpp@{Factorize.hpp}!fast\_factors@{fast\_factors}}
+\index{fast\_factors@{fast\_factors}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{fast\_factors()}{fast\_factors()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ fast\+\_\+factors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_a625e677fedbd7bbbe67c1c77c27c144e}\label{_factorize_8hpp_a625e677fedbd7bbbe67c1c77c27c144e} 
+\index{Factorize.hpp@{Factorize.hpp}!fast\_prime@{fast\_prime}}
+\index{fast\_prime@{fast\_prime}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{fast\_prime()}{fast\_prime()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ fast\+\_\+prime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{n }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_a051393f56fc212b221a048ea807867bd}\label{_factorize_8hpp_a051393f56fc212b221a048ea807867bd} 
+\index{Factorize.hpp@{Factorize.hpp}!gcd@{gcd}}
+\index{gcd@{gcd}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}} gcd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}}]{a,  }\item[{\mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_aa5fd5bc95a653e6bd99e82b517d70e63}\label{_factorize_8hpp_aa5fd5bc95a653e6bd99e82b517d70e63} 
+\index{Factorize.hpp@{Factorize.hpp}!is\_Probably\_Prime@{is\_Probably\_Prime}}
+\index{is\_Probably\_Prime@{is\_Probably\_Prime}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{is\_Probably\_Prime()}{is\_Probably\_Prime()}}
+{\footnotesize\ttfamily bool is\+\_\+\+Probably\+\_\+\+Prime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{n,  }\item[{int}]{k = {\ttfamily 5} }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_ab3023e2480aca39461c5dc64970f2a0a}\label{_factorize_8hpp_ab3023e2480aca39461c5dc64970f2a0a} 
+\index{Factorize.hpp@{Factorize.hpp}!Miller\_test@{Miller\_test}}
+\index{Miller\_test@{Miller\_test}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{Miller\_test()}{Miller\_test()}}
+{\footnotesize\ttfamily bool Miller\+\_\+test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{n,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{a,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{d,  }\item[{int}]{s }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_ac4a0e714cff75b2611438f354282cf22}\label{_factorize_8hpp_ac4a0e714cff75b2611438f354282cf22} 
+\index{Factorize.hpp@{Factorize.hpp}!modMult@{modMult}}
+\index{modMult@{modMult}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{modMult()}{modMult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} mod\+Mult (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{a,  }\item[{const \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{b,  }\item[{const \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{_factorize_8hpp_a81d41356cb45ae7f36213f3899632cbf}\label{_factorize_8hpp_a81d41356cb45ae7f36213f3899632cbf} 
+\index{Factorize.hpp@{Factorize.hpp}!nested@{nested}}
+\index{nested@{nested}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{nested()}{nested()}}
+{\footnotesize\ttfamily void nested (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ $>$ \&}]{v,  }\item[{const vector$<$ pair$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ $>$ \&}]{org,  }\item[{int}]{depth,  }\item[{vector$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ \&}]{ans }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_aab24ba9257edea918fcb6c34be55b261}\label{_factorize_8hpp_aab24ba9257edea918fcb6c34be55b261} 
+\index{Factorize.hpp@{Factorize.hpp}!Pollard\_Rho@{Pollard\_Rho}}
+\index{Pollard\_Rho@{Pollard\_Rho}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{Pollard\_Rho()}{Pollard\_Rho()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} Pollard\+\_\+\+Rho (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{n,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{c = {\ttfamily 1},  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{x0 = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_a3033dd9e485ac116c687adf9d7057543}\label{_factorize_8hpp_a3033dd9e485ac116c687adf9d7057543} 
+\index{Factorize.hpp@{Factorize.hpp}!powMod@{powMod}}
+\index{powMod@{powMod}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{powMod()}{powMod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} pow\+Mod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{base,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{exp,  }\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{_factorize_8hpp_a7d87970a2b1e98824803e8d238a974bc}\label{_factorize_8hpp_a7d87970a2b1e98824803e8d238a974bc} 
+\index{Factorize.hpp@{Factorize.hpp}!prime\_with\_mult@{prime\_with\_mult}}
+\index{prime\_with\_mult@{prime\_with\_mult}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{prime\_with\_mult()}{prime\_with\_mult()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}, \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}} $>$ $>$ prime\+\_\+with\+\_\+mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}]{n }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_factorize_8hpp_a2cc13209dcbaeded21a0c6b3572554d9}\label{_factorize_8hpp_a2cc13209dcbaeded21a0c6b3572554d9} 
+\index{Factorize.hpp@{Factorize.hpp}!primes@{primes}}
+\index{primes@{primes}!Factorize.hpp@{Factorize.hpp}}
+\doxysubsubsection{\texorpdfstring{primes}{primes}}
+{\footnotesize\ttfamily vector$<$size\+\_\+t$>$ primes}
+

@@ -1,0 +1,64 @@
+\doxysection{Minimum\+\_\+\+Cut.\+hpp}
+\hypertarget{_minimum___cut_8hpp_source}{}\label{_minimum___cut_8hpp_source}\index{Graphs/Minimum\_Cut/Minimum\_Cut.hpp@{Graphs/Minimum\_Cut/Minimum\_Cut.hpp}}
+\mbox{\hyperlink{_minimum___cut_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ MINIMUM\_CUT}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MINIMUM\_CUT}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_maximum___flow_8hpp}{Graphs\(\backslash\)Maximum\_Flow\(\backslash\)Maximum\_Flow.hpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{My\ implementation\ of\ using\ dinitz\ algorithm\ to\ calculate\ the\ minimum\ cut\ of\ a\ graph.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{Takes\ as\ input\ the\ number\ of\ nodes\ in\ the\ graph,\ the\ vertice\ s\ that\ should\ be\ in\ the\ cut,\ the\ vertice\ v\ which\ must\ not\ be\ in\ the\ cut.\ And\ the\ edges\ of\ the\ graph\ as\ adjacency\ lists}}
+\DoxyCodeLine{00013\ \textcolor{comment}{Returns\ a\ vector\ containing\ all\ the\ nodes\ that\ are\ included\ in\ the\ cut.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{Time\ complexity:\ O(m*n\string^2)\ where\ n\ is\ the\ number\ of\ nodes\ in\ the\ graph,\ and\ m\ is\ the\ number\ of\ edges.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ std::vector<size\_t>\ \mbox{\hyperlink{_minimum___cut_8hpp_aba364b928f422f96147fa49944a96ee8}{minimum\_cut}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ s,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ t,\ std::vector<std::vector<Edge>>\ edges)\{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ flowIncrease;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ total\ =\ 0;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//Add\ reverse\ flow\ edges}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}\ =\ 0;\ \mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}\ <\ nodes;\ \mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}++)\{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ edges[\mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}].size();\ i++)\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_edge}{Edge}}\&\ e\ =\ edges[\mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}][i];}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.\mbox{\hyperlink{struct_edge_a1bfec4695b72286582a99fa41a03136a}{reverse}}\ ==\ -\/1)\{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.\mbox{\hyperlink{struct_edge_a1bfec4695b72286582a99fa41a03136a}{reverse}}\ =\ edges[e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}}].size();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_edge}{Edge}}\ reverse\ =\ \{e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}},\ e.\mbox{\hyperlink{struct_edge_a3df41a08201fd39813da3e72d3a0717f}{from}},\ 0,\ 0,\ i\};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ edges[e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}}].push\_back(reverse);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<long\ long\ int>\ level(nodes);}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<size\_t>\ next(2*nodes);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d}{dinic\_bfs}}(s,\ t,\ edges,\ level))\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ next[i]\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ flowIncrease\ =\ \mbox{\hyperlink{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}{dinic\_dfs}}(s,\ t,\ edges,\ level,\ next,\ (1\ <<\ 30));}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ flowIncrease;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (flowIncrease);\ \textcolor{comment}{//Medans\ det\ finns\ flöde\ att\ expandera\ med,\ gör\ det.}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//The\ nodes\ to\ be\ included\ in\ the\ cut\ are\ all\ nodes\ still\ reachable\ from\ s}}
+\DoxyCodeLine{00050\ \ \ \ \ std::vector<size\_t>\ minCutNodes;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(level[i]\ !=\ -\/1)\ minCutNodes.push\_back(i);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{return}\ minCutNodes;}
+\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

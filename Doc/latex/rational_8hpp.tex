@@ -1,0 +1,42 @@
+\doxysection{Arithmetic/\+Rational arithmetic/rational.hpp File Reference}
+\hypertarget{rational_8hpp}{}\label{rational_8hpp}\index{Arithmetic/Rational arithmetic/rational.hpp@{Arithmetic/Rational arithmetic/rational.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_rational}{Rational$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447}{gcd}} (T a, T b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{rational_8hpp_a695f7b6c1d155ebcd3c397288eb8be82}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{struct_rational}{Rational}}$<$ T $>$ \&m)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{rational_8hpp_aa1b4579ee3513eb82c8b7436be5a18f5}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{struct_rational}{Rational}}$<$ T $>$ \&m)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447}\label{rational_8hpp_a4ed4f97d6b6a804b967ac19fec6a5447} 
+\index{rational.hpp@{rational.hpp}!gcd@{gcd}}
+\index{gcd@{gcd}!rational.hpp@{rational.hpp}}
+\doxysubsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T gcd (\begin{DoxyParamCaption}\item[{T}]{a,  }\item[{T}]{b }\end{DoxyParamCaption})}
+
+\Hypertarget{rational_8hpp_aa1b4579ee3513eb82c8b7436be5a18f5}\label{rational_8hpp_aa1b4579ee3513eb82c8b7436be5a18f5} 
+\index{rational.hpp@{rational.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!rational.hpp@{rational.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{struct_rational}{Rational}}$<$ T $>$ \&}]{m }\end{DoxyParamCaption})}
+
+\Hypertarget{rational_8hpp_a695f7b6c1d155ebcd3c397288eb8be82}\label{rational_8hpp_a695f7b6c1d155ebcd3c397288eb8be82} 
+\index{rational.hpp@{rational.hpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!rational.hpp@{rational.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{struct_rational}{Rational}}$<$ T $>$ \&}]{m }\end{DoxyParamCaption})}
+

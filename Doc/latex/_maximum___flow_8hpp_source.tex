@@ -1,0 +1,168 @@
+\doxysection{Maximum\+\_\+\+Flow.\+hpp}
+\hypertarget{_maximum___flow_8hpp_source}{}\label{_maximum___flow_8hpp_source}\index{Graphs/Maximum\_Flow/Maximum\_Flow.hpp@{Graphs/Maximum\_Flow/Maximum\_Flow.hpp}}
+\mbox{\hyperlink{_maximum___flow_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ MAXIMUM\_FLOW\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAXIMUM\_FLOW\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<stddef.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<queue>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include<optional>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_edge}{Edge}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_edge_a3df41a08201fd39813da3e72d3a0717f}{from}};\ \textcolor{comment}{//Vilken\ nod\ går\ denna\ kanten\ från?}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}};\ \textcolor{comment}{//Vilken\ nod\ går\ denna\ kanten\ till?}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_abad3110849b811e65727a361b05b7087}{capacity}};\ \textcolor{comment}{//Hur\ mycket\ capacitet\ finns\ kvar?}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_a28eb0c2c6c5e6bbdad6b80873bf16469}{flow}}\ =\ 0;\ \textcolor{comment}{//Hur\ mycket\ flöde\ är\ det\ just\ nu?}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_edge_a1bfec4695b72286582a99fa41a03136a}{reverse}}\ =\ -\/1;\ \textcolor{comment}{//Var\ finns\ reverse-\/flow\ kanten?}}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//Beräkna\ nivån\ för\ varje\ nod.\ D.v.s.\ hur\ långt\ ifrån\ källan\ den\ ligger.\ Om\ en\ nod\ inte\ kan\ nås\ från\ källan\ då\ får\ den\ värdet\ -\/1}}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d}{dinic\_bfs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ source,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ sink,\ \textcolor{keyword}{const}\ std::vector<std::vector<Edge>>\&\ edges,\ std::vector<long\ long\ int>\&\ level);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//Hitta\ vägar\ som\ expanderar\ flödet\ med\ en\ DFS.}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}{dinic\_dfs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ at,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ sink,\ std::vector<std::vector<Edge>>\&\ edges,\ \textcolor{keyword}{const}\ std::vector<long\ long\ int>\&\ level,\ std::vector<size\_t>\&\ next,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ mini);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00029\ \textcolor{comment}{My\ implementation\ of\ dinitz\ algorithm\ to\ calculate\ the\ maximum\ flow\ in\ a\ graph.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{Takes\ as\ input\ the\ number\ of\ nodes\ in\ the\ graph,\ what\ node\ is\ the\ source,\ what\ node\ is\ the\ sink,\ and\ the\ edges\ of\ the\ graph\ in\ adjacency\ list\ representation.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{Returns\ a\ pair,\ where\ the\ first\ element\ is\ the\ size\ of\ the\ maximum\ possible\ flow\ for\ the\ graph.\ The\ second\ element\ is\ a\ vector\ containing\ all\ edges\ that\ there\ is\ flow\ through.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{Time\ complexity:\ O(m*n\string^2)\ where\ n\ is\ the\ number\ of\ nodes\ in\ the\ graph,\ and\ m\ is\ the\ number\ of\ edges.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00034\ std::pair<long\ long\ int,\ std::vector<Edge>>\ \mbox{\hyperlink{_maximum___flow_8hpp_a67f2399d3eea15c2a2c9553c4ae3ce27}{dinic\_max\_flow}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ source,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ sink,\ std::vector<std::vector<Edge>>\ edges);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d}{dinic\_bfs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ source,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ sink,\ \textcolor{keyword}{const}\ std::vector<std::vector<Edge>>\&\ edges,\ std::vector<long\ long\ int>\&\ level)\{}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ level.size();\ i++)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ level[i]\ =\ -\/1;}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ level[source]\ =\ 0;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ std::queue<size\_t>\ q;}
+\DoxyCodeLine{00078\ \ \ \ \ q.push(source);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ at;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ at\ =\ q.front();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ edges[at].size();\ i++)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level[edges[at][i].to]\ <\ 0\ \&\&\ edges[at][i].flow\ <\ edges[at][i].capacity)\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ level[edges[at][i].to]\ =\ level[at]\ +\ 1;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.push(edges[at][i].to);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ level[sink]\ >\ 0;\ \textcolor{comment}{//Om\ level[sink]\ =\ -\/1\ då\ finns\ det\ ingen\ väg\ från\ källan\ till\ sänkan\ och\ det\ finns\ inget\ sätt\ att\ skicka\ mer\ flöde.}}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}{dinic\_dfs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ at,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ sink,\ std::vector<std::vector<Edge>>\&\ edges,\ \textcolor{keyword}{const}\ std::vector<long\ long\ int>\&\ level,\ std::vector<size\_t>\&\ next,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ mini)\{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (at\ ==\ sink)\ \textcolor{keywordflow}{return}\ mini;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{comment}{//Next\ sparas\ mellan\ olika\ anrop\ av\ dfs.\ D.v.s\ vi\ börjar\ där\ vi\ vet\ att\ det\ kan\ finnas\ utrymme\ att\ expandera.}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ next[at]\ <\ edges[at].size();\ next[at]++)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_edge}{Edge}}\&\ e\ =\ edges[at][next[at]];}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Om\ noden\ vi\ tittar\ på\ har\ en\ högre\ level\ och\ kanten\ har\ kapacitet.}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level[e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}}]\ ==\ level[at]\ +\ 1\ \&\&\ e.\mbox{\hyperlink{struct_edge_a28eb0c2c6c5e6bbdad6b80873bf16469}{flow}}\ <\ e.\mbox{\hyperlink{struct_edge_abad3110849b811e65727a361b05b7087}{capacity}})\ \{}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//T1\ är\ den\ minsta\ kapaciteten\ hos\ alla\ kanter\ som\ går\ till\ sänkan.\ D.v.s.\ maximala\ möjliga\ utvidgninen.}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ t1\ =\ \mbox{\hyperlink{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}{dinic\_dfs}}(e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}},\ sink,\ edges,\ level,\ next,\ std::min(mini,\ e.\mbox{\hyperlink{struct_edge_abad3110849b811e65727a361b05b7087}{capacity}}\ -\/\ e.\mbox{\hyperlink{struct_edge_a28eb0c2c6c5e6bbdad6b80873bf16469}{flow}}));}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t1)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.\mbox{\hyperlink{struct_edge_a28eb0c2c6c5e6bbdad6b80873bf16469}{flow}}\ +=\ t1;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ edges[e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}}][e.\mbox{\hyperlink{struct_edge_a1bfec4695b72286582a99fa41a03136a}{reverse}}].flow\ -\/=\ t1;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t1;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ std::pair<long\ long\ int,\ std::vector<Edge>>\ \mbox{\hyperlink{_maximum___flow_8hpp_a67f2399d3eea15c2a2c9553c4ae3ce27}{dinic\_max\_flow}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ source,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ sink,\ std::vector<std::vector<Edge>>\ edges)\{}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ flowIncrease;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ total\ =\ 0;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//Add\ reverse\ flow\ edges}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}\ =\ 0;\ \mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}\ <\ nodes;\ \mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}++)\{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ edges[\mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}].size();\ i++)\{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_edge}{Edge}}\&\ e\ =\ edges[\mbox{\hyperlink{shortest__path_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}][i];}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.\mbox{\hyperlink{struct_edge_a1bfec4695b72286582a99fa41a03136a}{reverse}}\ ==\ -\/1)\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e.\mbox{\hyperlink{struct_edge_a1bfec4695b72286582a99fa41a03136a}{reverse}}\ =\ edges[e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}}].size();}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_edge}{Edge}}\ reverse\ =\ \{e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}},\ e.\mbox{\hyperlink{struct_edge_a3df41a08201fd39813da3e72d3a0717f}{from}},\ 0,\ 0,\ i\};}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ edges[e.\mbox{\hyperlink{struct_edge_a42574244cb450ad7806d5b699979a6ef}{to}}].push\_back(reverse);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ std::vector<long\ long\ int>\ level(nodes);}
+\DoxyCodeLine{00137\ \ \ \ \ std::vector<size\_t>\ next(2*nodes);}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d}{dinic\_bfs}}(source,\ sink,\ edges,\ level))\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ next[i]\ =\ 0;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ flowIncrease\ =\ \mbox{\hyperlink{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}{dinic\_dfs}}(source,\ sink,\ edges,\ level,\ next,\ (1\ <<\ 30));}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ flowIncrease;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (flowIncrease);\ \textcolor{comment}{//Medans\ det\ finns\ flöde\ att\ expandera\ med,\ gör\ det.}}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ std::vector<Edge>\ flowEdges;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ edges[i].size();\ j++)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (edges[i][j].flow\ >\ 0)\ flowEdges.push\_back(edges[i][j]);}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ \{total,\ flowEdges\};}
+\DoxyCodeLine{00157\ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

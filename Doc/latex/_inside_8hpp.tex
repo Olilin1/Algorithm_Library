@@ -1,0 +1,72 @@
+\doxysection{Geometry/\+Inside\+\_\+\+Polygon/\+Inside.hpp File Reference}
+\hypertarget{_inside_8hpp}{}\label{_inside_8hpp}\index{Geometry/Inside\_Polygon/Inside.hpp@{Geometry/Inside\_Polygon/Inside.hpp}}
+{\ttfamily \#include "{}Geometry\textbackslash{}\+Points\textbackslash{}\+Points.\+hpp"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}} \{ \mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba97428abf4f6a11dfc00d53c330031e95}{Outside}}
+, \mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba121481c1476f6e974cfd6cbf4ed2a876}{On\+Edge}}
+, \mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba212353e849e4c2dba826ac7dc914bdc1}{Inside}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{_inside_8hpp_adc51e1890f0978005a96130f2ed833e3}{my\+Abs}} (double y)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{_inside_8hpp_ada36e035a6648d3fae33de0e5e02fde2}{on\+Segment}} (std\+::pair$<$ \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$, \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ $>$ segment, \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ q)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}} \mbox{\hyperlink{_inside_8hpp_a538b91614e8cc7ba021c491a2f7968c8}{inside\+\_\+poly}} (std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ $>$ const \&polygon, \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ const \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}\label{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b} 
+\index{Inside.hpp@{Inside.hpp}!Status@{Status}}
+\index{Status@{Status}!Inside.hpp@{Inside.hpp}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Outside@{Outside}!Inside.hpp@{Inside.hpp}}\index{Inside.hpp@{Inside.hpp}!Outside@{Outside}}}\Hypertarget{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba97428abf4f6a11dfc00d53c330031e95}\label{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba97428abf4f6a11dfc00d53c330031e95} 
+Outside&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OnEdge@{OnEdge}!Inside.hpp@{Inside.hpp}}\index{Inside.hpp@{Inside.hpp}!OnEdge@{OnEdge}}}\Hypertarget{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba121481c1476f6e974cfd6cbf4ed2a876}\label{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba121481c1476f6e974cfd6cbf4ed2a876} 
+On\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inside@{Inside}!Inside.hpp@{Inside.hpp}}\index{Inside.hpp@{Inside.hpp}!Inside@{Inside}}}\Hypertarget{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba212353e849e4c2dba826ac7dc914bdc1}\label{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70ba212353e849e4c2dba826ac7dc914bdc1} 
+Inside&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_inside_8hpp_a538b91614e8cc7ba021c491a2f7968c8}\label{_inside_8hpp_a538b91614e8cc7ba021c491a2f7968c8} 
+\index{Inside.hpp@{Inside.hpp}!inside\_poly@{inside\_poly}}
+\index{inside\_poly@{inside\_poly}!Inside.hpp@{Inside.hpp}}
+\doxysubsubsection{\texorpdfstring{inside\_poly()}{inside\_poly()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{_inside_8hpp_a67a0db04d321a74b7e7fcfd3f1a3f70b}{Status}} inside\+\_\+poly (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ $>$ const \&}]{polygon,  }\item[{\mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ const \&}]{p }\end{DoxyParamCaption})}
+
+\Hypertarget{_inside_8hpp_adc51e1890f0978005a96130f2ed833e3}\label{_inside_8hpp_adc51e1890f0978005a96130f2ed833e3} 
+\index{Inside.hpp@{Inside.hpp}!myAbs@{myAbs}}
+\index{myAbs@{myAbs}!Inside.hpp@{Inside.hpp}}
+\doxysubsubsection{\texorpdfstring{myAbs()}{myAbs()}}
+{\footnotesize\ttfamily double my\+Abs (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})}
+
+\Hypertarget{_inside_8hpp_ada36e035a6648d3fae33de0e5e02fde2}\label{_inside_8hpp_ada36e035a6648d3fae33de0e5e02fde2} 
+\index{Inside.hpp@{Inside.hpp}!onSegment@{onSegment}}
+\index{onSegment@{onSegment}!Inside.hpp@{Inside.hpp}}
+\doxysubsubsection{\texorpdfstring{onSegment()}{onSegment()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool on\+Segment (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$, \mbox{\hyperlink{struct_point}{Point}}$<$ T $>$ $>$}]{segment,  }\item[{\mbox{\hyperlink{struct_point}{Point}}$<$ T $>$}]{q }\end{DoxyParamCaption})}
+

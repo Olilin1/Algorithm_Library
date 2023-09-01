@@ -1,0 +1,36 @@
+\doxysection{intersection.\+hpp}
+\hypertarget{intersection_8hpp_source}{}\label{intersection_8hpp_source}\index{Geometry/Line\_Intersection/intersection.hpp@{Geometry/Line\_Intersection/intersection.hpp}}
+\mbox{\hyperlink{intersection_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{Author:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ LINE\_INTERSECTION\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ LINE\_INTERSECTION\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{_points_8hpp}{Geometry\(\backslash\)Points\(\backslash\)Points.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00013\ std::vector<std::pair<Point<double>,\ \mbox{\hyperlink{struct_point}{Point<double>}}>>\ \mbox{\hyperlink{intersection_8hpp_ac4b6e91801955256ba8642ed8a2e952c}{line\_intersection}}(\mbox{\hyperlink{struct_point}{Point<T>}}\ p1,\mbox{\hyperlink{struct_point}{Point<T>}}\ p2,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ q1,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ q2)\{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point<T>}}\ deltaP\ =\ \mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(p2,\ p1);}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point<T>}}\ deltaQ\ =\ \mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(q2,\ q1);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ T\ cross\ =\ \mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(deltaP,\ deltaQ);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}(cross\ ==\ 0)\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_point}{Point<T>}}\ x\ =\ \mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(q1,\ p1);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(x,\ deltaP)\ ==\ 0)\ \textcolor{keywordflow}{return}\{p1,\ p2\};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s\ =\ (double)\ \mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(\mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(q1,\ p1),\ deltaP)\ /\ (\textcolor{keywordtype}{double})cross;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ t\ =\ (double)\ \mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(\mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(p1,\ q1),\ deltaQ)\ /\ (\textcolor{keywordtype}{double})cross;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

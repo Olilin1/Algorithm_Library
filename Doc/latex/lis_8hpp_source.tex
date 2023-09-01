@@ -1,0 +1,66 @@
+\doxysection{lis.\+hpp}
+\hypertarget{lis_8hpp_source}{}\label{lis_8hpp_source}\index{Misc/Longest Increasing Subsequence/lis.hpp@{Misc/Longest Increasing Subsequence/lis.hpp}}
+\mbox{\hyperlink{lis_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ LONGEST\_INCREASING\_SUBSEQUENCE\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ LONGEST\_INCREASING\_SUBSEQUENCE\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<iterator>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<limits>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<algorithm>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00013\ \textcolor{comment}{Takes\ a\ vector\ of\ integers\ and\ returns\ a\ vector\ of\ the\ indicies\ that\ should\ be\ used\ if\ you\ want\ to\ construct\ the\ longest\ possible\ subsequence\ using\ those\ integers.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{O(N*log(N))}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ std::vector<size\_t>\ \mbox{\hyperlink{lis_8hpp_a69a3ebab26611571a6384be40dfe2fca}{lis}}(\textcolor{keyword}{const}\ std::vector<long\ long\ int>\&\ v)\{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}\ \mbox{\hyperlink{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069}{inf}}\ =\ std::numeric\_limits<ll>::max();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<size\_t>\ ans;}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<std::pair<ll,\ size\_t>>\ last(v.size()+1,\ \{inf,\ inf\});\ \textcolor{comment}{//Last[L].first\ is\ the\ lowest\ value\ so\ far\ that\ can\ end\ a\ subsequence\ of\ length\ L.\ Second\ är\ L's\ index\ i\ v}}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<size\_t>\ backTrack(v.size(),\ \mbox{\hyperlink{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069}{inf}});}
+\DoxyCodeLine{00024\ \ \ \ \ last[0].first\ =\ -\/last[0].first;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ v.size();\ i++)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//it\ pekar\ på\ första\ elementet\ som\ är\ större\ än\ v[i].}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::upper\_bound(last.begin(),\ last.end(),\ v[i],\ [](\textcolor{keyword}{auto}\ value,\ \textcolor{keyword}{auto}\ elem)\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ return\ value\ <\ elem.first;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \});\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((it-\/1)-\/>first\ <\ v[i])\{\ \textcolor{comment}{//Kolla\ så\ att\ det\ går\ att\ avsluta\ en\ subsequence\ av\ längd\ L-\/1\ med\ ett\ värde\ som\ är\ mindre\ än\ v[i]}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>first\ =\ v[i];}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>second\ =\ i;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ backTrack[i]\ =\ (it-\/1)-\/>second;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ L;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ last.size();\ i++)\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(last[i].first\ <\ \mbox{\hyperlink{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069}{inf}})\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ L\ =\ last[i].second;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//Reconstruct\ the\ solution}}
+\DoxyCodeLine{00048\ \ \ \ \ ans.reserve(L);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ ans.push\_back(L);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ L\ =\ backTrack[L];}
+\DoxyCodeLine{00052\ \ \ \ \ \}\textcolor{keywordflow}{while}(L\ !=\ \mbox{\hyperlink{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069}{inf}});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::reverse(ans.begin(),\ ans.end());}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ ans;}
+\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

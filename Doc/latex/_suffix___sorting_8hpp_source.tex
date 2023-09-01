@@ -1,0 +1,131 @@
+\doxysection{Suffix\+\_\+\+Sorting.\+hpp}
+\hypertarget{_suffix___sorting_8hpp_source}{}\label{_suffix___sorting_8hpp_source}\index{Strings/Suffix-\/sorting/Suffix\_Sorting.hpp@{Strings/Suffix-\/sorting/Suffix\_Sorting.hpp}}
+\mbox{\hyperlink{_suffix___sorting_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ SUFFIX\_ARRAY\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ SUFFIX\_ARRAY\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include<stddef.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00015\ \textcolor{comment}{A\ class\ that\ computes\ the\ suffix-\/array\ of\ a\ string\ s.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{Takes\ a\ string\ to\ compute\ the\ array\ for\ as\ argument\ to\ the\ constructor.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{Also\ provides\ a\ function\ getSuffix(i)\ which\ returns\ the\ index\ in\ s\ at\ which\ the\ i:th\ smallest\ suffix\ begins.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{}}
+\DoxyCodeLine{00019\ \textcolor{comment}{Time\ complexity\ of\ the\ constructor\ is\ O(n\ log\string^2(n)),}}
+\DoxyCodeLine{00020\ \textcolor{comment}{getSuffix\ runs\ in\ constant\ time.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_suffix_array}{SuffixArray}}\{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<size\_t>\ sorted;}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_suffix_array}{SuffixArray}}(std::string\ \textcolor{keyword}{const}\ \&\ s);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_suffix_array_af083687ed1307e3fe27c4c1f8e5dc2dc}{getSuffix}}(\textcolor{keywordtype}{size\_t}\ i);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{class_suffix_array_ad389e9e47e14fef5d29e9811c4cced2c}{SuffixArray::SuffixArray}}(std::string\ \textcolor{keyword}{const}\ \&\ s)\{}
+\DoxyCodeLine{00060\ \ \ \ \ std::vector<size\_t>\ buckets(s.length());}
+\DoxyCodeLine{00061\ \ \ \ \ std::vector<size\_t>\ newBuckets(s.length());}
+\DoxyCodeLine{00062\ \ \ \ \ std::vector<size\_t>\ suffixPosition(s.length());}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ buckets[0]\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ newBuckets[0]\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ s.size();\ i++)\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ sorted.push\_back(i);}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//Do\ an\ initial\ sorting\ on\ just\ the\ first\ charachter}}
+\DoxyCodeLine{00072\ \ \ \ \ std::sort(sorted.begin(),\ sorted.end(),\ [\&s](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ return\ s[a]\ <\ s[b];}
+\DoxyCodeLine{00074\ \ \ \ \ \});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ buckets[0]\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ suffixPosition[sorted[0]]\ =\ 0;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ s.length();\ i++)\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(s[sorted[i]]\ ==\ s[sorted[i-\/1]])\ buckets[i]\ =\ buckets[i-\/1];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ buckets[i]\ =\ buckets[i-\/1]\ +\ 1;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ suffixPosition[sorted[i]]\ =\ buckets[i];}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//This\ loop\ will\ run\ log(n)\ times}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ k\ =\ 1;\ k\ <=\ s.length();\ k\ *=\ 2)\{}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Sorting\ takes\ n\ log(n)\ time}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::sort(sorted.begin(),\ sorted.end(),\ [\&s,\ \&k,\ \&suffixPosition](\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ b)\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ if(suffixPosition[a]\ ==\ suffixPosition[b])\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ one\ of\ the\ suffixes\ in\ this\ buckets\ end\ then\ it\ should\ come\ before\ the\ others}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(a+k\ >=\ s.length()\ ||\ b+k\ >=\ s.length())\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ a\ >\ b;\ \textcolor{comment}{//\ '>'\ instead\ of\ '<'\ because\ the\ bigger\ the\ number,\ the\ shorter\ the\ suffix}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Otherwise\ we\ sort\ based\ on\ the\ next\ 2\string^k\ chars,\ which\ have\ already\ been\ sorted\ somewhere\ else.}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ suffixPosition[a+k]\ <\ suffixPosition[b+k];}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//If\ they\ don't\ belong\ to\ the\ same\ bucket\ then\ their\ relative\ position\ shall\ remain\ the\ same.}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ suffixPosition[a]\ <\ suffixPosition[b];}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//This\ will\ run\ n\ times\ for\ bookkeeping}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ s.length();\ i++)\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(buckets[i]\ >\ buckets[i-\/1])\ newBuckets[i]\ =\ newBuckets[i-\/1]\ +\ 1;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(suffixPosition[sorted[i]\ +\ k]\ >\ suffixPosition[sorted[i-\/1]\ +\ k])\ newBuckets[i]\ =\ newBuckets[i-\/1]\ +\ 1;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ newBuckets[i]\ =\ newBuckets[i-\/1];}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ buckets.swap(newBuckets);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ s.length();\ i++)\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ suffixPosition[sorted[i]]\ =\ buckets[i];\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_suffix_array_af083687ed1307e3fe27c4c1f8e5dc2dc}{SuffixArray::getSuffix}}(\textcolor{keywordtype}{size\_t}\ i)\{}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{return}\ sorted[i];}
+\DoxyCodeLine{00123\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

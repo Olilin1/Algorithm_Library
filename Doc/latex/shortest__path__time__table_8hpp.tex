@@ -1,0 +1,79 @@
+\doxysection{Graphs/\+Dijkstra\+\_\+\+Time\+\_\+\+Table/shortest\+\_\+path\+\_\+time\+\_\+table.hpp File Reference}
+\hypertarget{shortest__path__time__table_8hpp}{}\label{shortest__path__time__table_8hpp}\index{Graphs/Dijkstra\_Time\_Table/shortest\_path\_time\_table.hpp@{Graphs/Dijkstra\_Time\_Table/shortest\_path\_time\_table.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_edge}{Edge}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{shortest__path__time__table_8hpp_af4f12397387d83cd9c47b663c74f1f29}{node}}~first
+\item 
+\#define \mbox{\hyperlink{shortest__path__time__table_8hpp_a9d4418feaea5490d8afb9c25c34fba4d}{parent}}~first
+\item 
+\#define \mbox{\hyperlink{shortest__path__time__table_8hpp_a47601570957b8460ab39a2bce0f587d4}{distance}}~second
+\item 
+\#define \mbox{\hyperlink{shortest__path__time__table_8hpp_aa9729b9af09826debfd9aa4e44005087}{weight}}~second
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long long int \mbox{\hyperlink{shortest__path__time__table_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::pair$<$ size\+\_\+t, unsigned long long int $>$ $>$ \mbox{\hyperlink{shortest__path__time__table_8hpp_aeb6cff15d9f6bd5d831f558dcaffdf02}{dijkstra\+\_\+shortest\+\_\+path\+\_\+time\+\_\+table}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \&adjaceny\+\_\+list, size\+\_\+t start\+Node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{shortest__path__time__table_8hpp_a47601570957b8460ab39a2bce0f587d4}\label{shortest__path__time__table_8hpp_a47601570957b8460ab39a2bce0f587d4} 
+\index{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!distance@{distance}}
+\index{distance@{distance}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily \#define distance~second}
+
+\Hypertarget{shortest__path__time__table_8hpp_af4f12397387d83cd9c47b663c74f1f29}\label{shortest__path__time__table_8hpp_af4f12397387d83cd9c47b663c74f1f29} 
+\index{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!node@{node}}
+\index{node@{node}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily \#define node~first}
+
+\Hypertarget{shortest__path__time__table_8hpp_a9d4418feaea5490d8afb9c25c34fba4d}\label{shortest__path__time__table_8hpp_a9d4418feaea5490d8afb9c25c34fba4d} 
+\index{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!parent@{parent}}
+\index{parent@{parent}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \#define parent~first}
+
+\Hypertarget{shortest__path__time__table_8hpp_aa9729b9af09826debfd9aa4e44005087}\label{shortest__path__time__table_8hpp_aa9729b9af09826debfd9aa4e44005087} 
+\index{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!weight@{weight}}
+\index{weight@{weight}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}}
+\doxysubsubsection{\texorpdfstring{weight}{weight}}
+{\footnotesize\ttfamily \#define weight~second}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{shortest__path__time__table_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}\label{shortest__path__time__table_8hpp_a6663709af6a38c4212fbcd6f2a6552a4} 
+\index{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!ull@{ull}}
+\index{ull@{ull}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}}
+\doxysubsubsection{\texorpdfstring{ull}{ull}}
+{\footnotesize\ttfamily typedef unsigned long long int \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{shortest__path__time__table_8hpp_aeb6cff15d9f6bd5d831f558dcaffdf02}\label{shortest__path__time__table_8hpp_aeb6cff15d9f6bd5d831f558dcaffdf02} 
+\index{shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}!dijkstra\_shortest\_path\_time\_table@{dijkstra\_shortest\_path\_time\_table}}
+\index{dijkstra\_shortest\_path\_time\_table@{dijkstra\_shortest\_path\_time\_table}!shortest\_path\_time\_table.hpp@{shortest\_path\_time\_table.hpp}}
+\doxysubsubsection{\texorpdfstring{dijkstra\_shortest\_path\_time\_table()}{dijkstra\_shortest\_path\_time\_table()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ size\+\_\+t, unsigned long long int $>$ $>$ dijkstra\+\_\+shortest\+\_\+path\+\_\+time\+\_\+table (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \&}]{adjaceny\+\_\+list,  }\item[{size\+\_\+t}]{start\+Node }\end{DoxyParamCaption})}
+

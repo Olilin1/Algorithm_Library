@@ -1,0 +1,79 @@
+\doxysection{Disjoint\+Set.\+hpp}
+\hypertarget{_disjoint_set_8hpp_source}{}\label{_disjoint_set_8hpp_source}\index{Data\_Structures/Disjoint\_Set/DisjointSet.hpp@{Data\_Structures/Disjoint\_Set/DisjointSet.hpp}}
+\mbox{\hyperlink{_disjoint_set_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ DISJOINTSET\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ DISJOINTSET\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<functional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00012\ \textcolor{comment}{A\ class\ designed\ to\ keep\ track\ of\ N\ different\ sets\ of\ N\ total\ elements.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{Has\ a\ function\ to\ merge\ two\ sets,\ and\ a\ function\ to\ check\ if\ two\ elements\ are\ in\ the\ same\ set.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{TODO:\ Change\ to\ size\_t}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_disjoint_set}{DisjointSet}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<int>\ comp;\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ representative(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a);\ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_disjoint_set}{DisjointSet}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ elements);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_disjoint_set_a43f375e8104ca4e0a5d5495bd3d428d8}{unionSets}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_disjoint_set_ac882b78dbbd4de376ca0fc7b30ddb03a}{query}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \mbox{\hyperlink{class_disjoint_set_af33652d842c0ee6ee969b59386e0b2e3}{DisjointSet::DisjointSet}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ elements)\ :\ comp(elements,\ -\/1)\ \{\};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_disjoint_set_a43f375e8104ca4e0a5d5495bd3d428d8}{DisjointSet::unionSets}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ b)\{}
+\DoxyCodeLine{00053\ \ \ \ \ a\ =\ representative(a);}
+\DoxyCodeLine{00054\ \ \ \ \ b\ =\ representative(b);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}(a\ ==\ b)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}(comp[a]\ >\ comp[b])\ std::swap(a,b);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ comp[a]\ +=\ comp[b];\ \textcolor{comment}{//The\ size\ of\ set\ containing\ a\ has\ been\ increased\ by\ size\ of\ set\ containing\ b.}}
+\DoxyCodeLine{00061\ \ \ \ \ comp[b]\ =\ a;\ \textcolor{comment}{//All\ elements\ that\ had\ b\ as\ a\ representative\ will\ now\ have\ a\ as\ a\ representative.}}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{int}\ DisjointSet::representative(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a)\{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{if}(comp[a]\ <\ 0)\ \textcolor{keywordflow}{return}\ a;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//recursively\ find\ and\ update\ our\ representative}}
+\DoxyCodeLine{00068\ \ \ \ \ comp[a]\ =\ representative(comp[a]);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ comp[a];}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_disjoint_set_ac882b78dbbd4de376ca0fc7b30ddb03a}{DisjointSet::query}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ b)\{}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{return}\ representative(a)\ ==\ representative(b);}
+\DoxyCodeLine{00074\ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

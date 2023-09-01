@@ -1,0 +1,180 @@
+\doxysection{Eulerian\+\_\+\+Path.\+hpp}
+\hypertarget{_eulerian___path_8hpp_source}{}\label{_eulerian___path_8hpp_source}\index{Graphs/Eulerian\_Path/Eulerian\_Path.hpp@{Graphs/Eulerian\_Path/Eulerian\_Path.hpp}}
+\mbox{\hyperlink{_eulerian___path_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ \ \ AUTHOR:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ EULERIAN\_PATH}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ EULERIAN\_PATH}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<set>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include<unordered\_set>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include<stddef.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include<unordered\_map>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include<algorithm>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include<stack>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{Calculates\ the\ Eulerian\ path\ in\ an\ udirected\ graph.\ Takes\ as\ input\ the\ number\ of\ nodes,\ as\ well\ as\ the\ edges\ of\ the\ graph\ in\ adjaceny\ list\ form.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{Returns\ a\ vector\ of\ nodes,\ indicating\ the\ order\ to\ visit\ the\ nodes\ in.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{If\ no\ Eulerian\ path\ exists\ then\ the\ empty\ vector\ is\ returned.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{Time\ complexity:\ O(m)\ where\ m\ is\ the\ number\ of\ edges\ in\ the\ graph}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00023\ std::vector<size\_t>\ \mbox{\hyperlink{_eulerian___path_8hpp_ac97362ae5ead78018be6cc768848fd9f}{Eulerian\_Path\_Undirected}}(\textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ std::vector<std::vector<size\_t>>\&\ neighbours);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{Calculates\ the\ Eulerian\ path\ in\ a\ directed\ graph.\ Takes\ as\ input\ the\ number\ of\ nodes,\ as\ well\ as\ the\ edges\ of\ the\ graph\ in\ adjaceny\ list\ form.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{Returns\ a\ vector\ of\ nodes,\ indicating\ the\ order\ to\ visit\ the\ nodes\ in.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{If\ no\ Eulerian\ path\ exists\ then\ the\ empty\ vector\ is\ returned.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{Time\ complexity:\ O(m)\ where\ m\ is\ the\ number\ of\ edges\ in\ the\ graph}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00031\ std::vector<size\_t>\ \mbox{\hyperlink{_eulerian___path_8hpp_acae627080a1d1d01eb0337dda214ae6e}{Eulerian\_Path\_Directed}}(\textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ std::vector<std::vector<size\_t>>\&\ neighbours);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ std::vector<size\_t>\ \mbox{\hyperlink{_eulerian___path_8hpp_ac97362ae5ead78018be6cc768848fd9f}{Eulerian\_Path\_Undirected}}(\textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ std::vector<std::vector<size\_t>>\&\ neighbours)\{}
+\DoxyCodeLine{00056\ \ \ \ \ std::vector<std::unordered\_map<size\_t,\ unsigned\ long\ long\ int>>\ adjacent(nodes);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<size\_t>\ path;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ edges\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ startNode\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ uneven\ =\ 0;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::vector<size\_t>\ degrees(nodes);}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ :\ neighbours[i])\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ startNode\ =\ i;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ edges++;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[i][j]++;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ degrees[i]++;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ degrees[j]++;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ edges\ /=\ 2;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ degrees[i]\ /=\ 2;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(degrees[i]\ \%\ 2\ !=\ 0)\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ startNode\ =\ i;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ uneven++;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{if}(uneven\ !=\ 0\ \&\&\ uneven\ !=\ 2)\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::stack<size\_t>\ myStack;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ myStack.push(startNode);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{while}(!myStack.empty())\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ v\ =\ myStack.top();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(degrees[v]\ ==\ 0)\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ path.push\_back(v);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ myStack.pop();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ next\ =\ adjacent[v].begin()-\/>first;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[v][next]-\/-\/;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[next][v]-\/-\/;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ degrees[v]-\/-\/;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ degrees[next]-\/-\/;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ myStack.push(next);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(adjacent[v][next]\ ==\ 0)\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[v].erase(next);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[next].erase(v);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{if}(path.size()\ !=\ edges\ +\ 1)\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ std::vector<size\_t>\ \mbox{\hyperlink{_eulerian___path_8hpp_acae627080a1d1d01eb0337dda214ae6e}{Eulerian\_Path\_Directed}}(\textcolor{keywordtype}{size\_t}\ nodes,\ \textcolor{keyword}{const}\ std::vector<std::vector<size\_t>>\&\ neighbours)\{}
+\DoxyCodeLine{00118\ \ \ \ \ std::vector<std::unordered\_map<size\_t,\ unsigned\ long\ long\ int>>\ adjacent(nodes);}
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<size\_t>\ path;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ startNode\ =\ 0;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ uneven\ =\ 0;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ edges\ =\ 0;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::vector<long\ long\ int>\ degrees(nodes);}
+\DoxyCodeLine{00126\ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ :\ neighbours[i])\{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ startNode\ =\ i;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ edges++;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[i][j]++;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ degrees[i]++;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ degrees[j]-\/-\/;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ nodes;\ i++)\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(degrees[i]\ !=\ 0)\{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(degrees[i]\ ==\ 1)}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startNode\ =\ i;}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ uneven++;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{if}(uneven\ !=\ 0\ \&\&\ uneven\ !=\ 2)\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ std::stack<size\_t>\ myStack;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ myStack.push(startNode);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{while}(!myStack.empty())\{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ v\ =\ myStack.top();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(adjacent[v].empty())\{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ path.push\_back(v);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ myStack.pop();}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ next\ =\ adjacent[v].begin()-\/>first;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[v][next]-\/-\/;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ myStack.push(next);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(adjacent[v][next]\ ==\ 0)\{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacent[v].erase(next);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}(path.size()\ !=\ edges+1)\ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{00170\ \ \ \ \ std::reverse(path.begin(),\ path.end());}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00172\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

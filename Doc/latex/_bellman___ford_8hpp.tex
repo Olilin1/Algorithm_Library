@@ -1,0 +1,47 @@
+\doxysection{Graphs/\+Bellman\+\_\+\+Ford/\+Bellman\+\_\+\+Ford.hpp File Reference}
+\hypertarget{_bellman___ford_8hpp}{}\label{_bellman___ford_8hpp}\index{Graphs/Bellman\_Ford/Bellman\_Ford.hpp@{Graphs/Bellman\_Ford/Bellman\_Ford.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_edge}{Edge}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::pair$<$ long long int, size\+\_\+t $>$ $>$ \mbox{\hyperlink{_bellman___ford_8hpp_a01cb306af9faeeee30572c8fc8e65f1d}{Bellman\+\_\+\+Ford}} (const size\+\_\+t nodes, const size\+\_\+t start\+Node, const std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ \&edges)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const long long int \mbox{\hyperlink{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069}{inf}} = std\+::numeric\+\_\+limits$<$long long int$>$\+::max()
+\item 
+const long long int \mbox{\hyperlink{_bellman___ford_8hpp_aa5a286e486cfdde4e2f70a0a69078f80}{neg\+Inf}} = std\+::numeric\+\_\+limits$<$long long int$>$\+::min()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_bellman___ford_8hpp_a01cb306af9faeeee30572c8fc8e65f1d}\label{_bellman___ford_8hpp_a01cb306af9faeeee30572c8fc8e65f1d} 
+\index{Bellman\_Ford.hpp@{Bellman\_Ford.hpp}!Bellman\_Ford@{Bellman\_Ford}}
+\index{Bellman\_Ford@{Bellman\_Ford}!Bellman\_Ford.hpp@{Bellman\_Ford.hpp}}
+\doxysubsubsection{\texorpdfstring{Bellman\_Ford()}{Bellman\_Ford()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ long long int, size\+\_\+t $>$ $>$ Bellman\+\_\+\+Ford (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{nodes,  }\item[{const size\+\_\+t}]{start\+Node,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ \&}]{edges }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069}\label{_bellman___ford_8hpp_ac4db1f2cc4694d0ce64138a54ec92069} 
+\index{Bellman\_Ford.hpp@{Bellman\_Ford.hpp}!inf@{inf}}
+\index{inf@{inf}!Bellman\_Ford.hpp@{Bellman\_Ford.hpp}}
+\doxysubsubsection{\texorpdfstring{inf}{inf}}
+{\footnotesize\ttfamily const long long int inf = std\+::numeric\+\_\+limits$<$long long int$>$\+::max()}
+
+\Hypertarget{_bellman___ford_8hpp_aa5a286e486cfdde4e2f70a0a69078f80}\label{_bellman___ford_8hpp_aa5a286e486cfdde4e2f70a0a69078f80} 
+\index{Bellman\_Ford.hpp@{Bellman\_Ford.hpp}!negInf@{negInf}}
+\index{negInf@{negInf}!Bellman\_Ford.hpp@{Bellman\_Ford.hpp}}
+\doxysubsubsection{\texorpdfstring{negInf}{negInf}}
+{\footnotesize\ttfamily const long long int neg\+Inf = std\+::numeric\+\_\+limits$<$long long int$>$\+::min()}
+

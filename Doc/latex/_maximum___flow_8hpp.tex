@@ -1,0 +1,41 @@
+\doxysection{Graphs/\+Maximum\+\_\+\+Flow/\+Maximum\+\_\+\+Flow.hpp File Reference}
+\hypertarget{_maximum___flow_8hpp}{}\label{_maximum___flow_8hpp}\index{Graphs/Maximum\_Flow/Maximum\_Flow.hpp@{Graphs/Maximum\_Flow/Maximum\_Flow.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_edge}{Edge}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d}{dinic\+\_\+bfs}} (const size\+\_\+t source, const size\+\_\+t sink, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \&edges, std\+::vector$<$ long long int $>$ \&level)
+\item 
+long long int \mbox{\hyperlink{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}{dinic\+\_\+dfs}} (const size\+\_\+t at, const size\+\_\+t sink, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \&edges, const std\+::vector$<$ long long int $>$ \&level, std\+::vector$<$ size\+\_\+t $>$ \&next, long long int mini)
+\item 
+std\+::pair$<$ long long int, std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \mbox{\hyperlink{_maximum___flow_8hpp_a67f2399d3eea15c2a2c9553c4ae3ce27}{dinic\+\_\+max\+\_\+flow}} (const size\+\_\+t nodes, const size\+\_\+t source, const size\+\_\+t sink, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ edges)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d}\label{_maximum___flow_8hpp_a8b7001c3f7516a6a8305d4987cdd3a8d} 
+\index{Maximum\_Flow.hpp@{Maximum\_Flow.hpp}!dinic\_bfs@{dinic\_bfs}}
+\index{dinic\_bfs@{dinic\_bfs}!Maximum\_Flow.hpp@{Maximum\_Flow.hpp}}
+\doxysubsubsection{\texorpdfstring{dinic\_bfs()}{dinic\_bfs()}}
+{\footnotesize\ttfamily bool dinic\+\_\+bfs (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{source,  }\item[{const size\+\_\+t}]{sink,  }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \&}]{edges,  }\item[{std\+::vector$<$ long long int $>$ \&}]{level }\end{DoxyParamCaption})}
+
+\Hypertarget{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba}\label{_maximum___flow_8hpp_a41df79973ef942305d1cef96075175ba} 
+\index{Maximum\_Flow.hpp@{Maximum\_Flow.hpp}!dinic\_dfs@{dinic\_dfs}}
+\index{dinic\_dfs@{dinic\_dfs}!Maximum\_Flow.hpp@{Maximum\_Flow.hpp}}
+\doxysubsubsection{\texorpdfstring{dinic\_dfs()}{dinic\_dfs()}}
+{\footnotesize\ttfamily long long int dinic\+\_\+dfs (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{at,  }\item[{const size\+\_\+t}]{sink,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ \&}]{edges,  }\item[{const std\+::vector$<$ long long int $>$ \&}]{level,  }\item[{std\+::vector$<$ size\+\_\+t $>$ \&}]{next,  }\item[{long long int}]{mini }\end{DoxyParamCaption})}
+
+\Hypertarget{_maximum___flow_8hpp_a67f2399d3eea15c2a2c9553c4ae3ce27}\label{_maximum___flow_8hpp_a67f2399d3eea15c2a2c9553c4ae3ce27} 
+\index{Maximum\_Flow.hpp@{Maximum\_Flow.hpp}!dinic\_max\_flow@{dinic\_max\_flow}}
+\index{dinic\_max\_flow@{dinic\_max\_flow}!Maximum\_Flow.hpp@{Maximum\_Flow.hpp}}
+\doxysubsubsection{\texorpdfstring{dinic\_max\_flow()}{dinic\_max\_flow()}}
+{\footnotesize\ttfamily std\+::pair$<$ long long int, std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$ dinic\+\_\+max\+\_\+flow (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{nodes,  }\item[{const size\+\_\+t}]{source,  }\item[{const size\+\_\+t}]{sink,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{struct_edge}{Edge}} $>$ $>$}]{edges }\end{DoxyParamCaption})}
+

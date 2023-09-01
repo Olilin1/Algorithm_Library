@@ -1,0 +1,76 @@
+\doxysection{Convex\+\_\+\+Hull.\+hpp}
+\hypertarget{_convex___hull_8hpp_source}{}\label{_convex___hull_8hpp_source}\index{Geometry/Convex\_Hull/Convex\_Hull.hpp@{Geometry/Convex\_Hull/Convex\_Hull.hpp}}
+\mbox{\hyperlink{_convex___hull_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{Author:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ CONVEX\_HULL\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ CONVEX\_HULL\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{_points_8hpp}{Geometry\(\backslash\)Points\(\backslash\)Points.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include<vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include<algorithm>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00012\ \textcolor{comment}{Function\ that\ takes\ a\ vector\ of\ points\ and\ returns\ the\ convex\ hull\ encircling\ them.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{The\ hull\ is\ given\ as\ a\ list\ of\ points\ in\ counterclockwise\ order,\ each\ point\ being\ a\ node\ in\ the\ hull.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{If\ the\ points\ are\ all\ colinear\ then\ the\ two\ endpoints\ are\ given.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{}}
+\DoxyCodeLine{00016\ \textcolor{comment}{Time\ Complexity:\ O(N\ log(n))}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00020\ std::vector<Point<T>>\ \mbox{\hyperlink{_convex___hull_8hpp_abe2581d617bddcf30621980ab3bb5bc9}{convex\_hull}}(std::vector<\mbox{\hyperlink{struct_point}{Point<T>}}>\ points)\{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ leftMostPoint\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point<T>}}\ org\ =\ \{0,0\};}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<Point<T>>\ hull;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//This\ is\ to\ later\ remove\ duplicates}}
+\DoxyCodeLine{00026\ \ \ \ \ std::sort(points.begin(),\ points.end(),\ [\&org](\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ if(a.x\ ==\ b.x)}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.y\ <\ b.y;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ return\ a.x\ <\ b.x;}
+\DoxyCodeLine{00031\ \ \ \ \ \});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//remove\ duplicates}}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<Point<T>>\ newPoints;}
+\DoxyCodeLine{00035\ \ \ \ \ newPoints.push\_back(points[0]);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ points.size();\ i++)\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(points[i]\ !=\ *(newPoints.rbegin()))\ newPoints.push\_back(points[i]);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ points.swap(newPoints);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//Find\ the\ leftmost\ point\ that\ is\ definitely\ on\ the\ hull}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ points.size();\ i++)\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(points[i].x\ <\ points[leftMostPoint].x)\ leftMostPoint\ =\ i;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(points[i].x\ ==\ points[leftMostPoint].x\ \&\&\ points[i].y\ >\ points[leftMostPoint].y)\ leftMostPoint\ =\ i;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ org\ =\ points[leftMostPoint];}
+\DoxyCodeLine{00050\ \ \ \ \ hull.push\_back(points[leftMostPoint]);}
+\DoxyCodeLine{00051\ \ \ \ \ points.erase(points.begin()\ +\ leftMostPoint);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//Sort\ the\ points\ based\ on\ angle\ from\ the\ previously\ determined\ point}}
+\DoxyCodeLine{00054\ \ \ \ \ std::sort(points.begin(),\ points.end(),\ [\&org](\mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ a,\ \mbox{\hyperlink{struct_point}{Point<T>}}\ \textcolor{keyword}{const}\ \&\ b)\{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ T\ cross\ =\ cross\_product(subtract(a,\ org),\ subtract(b,\ org));}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ if(cross\ ==\ 0)\ return\ distSquared(org,\ a)\ <\ distSquared(org,\ b);\ \textcolor{comment}{//De\ är\ ko-\/linjära}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ else\ return\ cross\ >\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//add\ points\ to\ the\ hull}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{struct_point}{Point<T>}}\ \&\ p\ :\ points)\{}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ we\ are\ doing\ a\ rightturn\ pop\ last\ point\ of\ hull.}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(hull.size()\ >=\ 2\ \&\&\ \mbox{\hyperlink{_points_8hpp_a2ef9c5d3fe590b44c87116aea09b1ba9}{cross\_product}}(\mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(hull[hull.size()-\/1],\ hull[hull.size()-\/2]),\ \mbox{\hyperlink{_points_8hpp_af17a81d0ae5510868b9ea10b0231bf8e}{subtract}}(p,\ hull[hull.size()-\/2]))\ <=\ 0)\ hull.pop\_back();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ hull.push\_back(p);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ hull;}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

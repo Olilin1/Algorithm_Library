@@ -1,0 +1,82 @@
+\doxysection{modular.\+hpp}
+\hypertarget{modular_8hpp_source}{}\label{modular_8hpp_source}\index{Arithmetic/Modular-\/Arithmetic/modular.hpp@{Arithmetic/Modular-\/Arithmetic/modular.hpp}}
+\mbox{\hyperlink{modular_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{Author:\ Oliver\ Lindgren}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include<utility>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include<cstdlib>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include<stddef.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{modular_8hpp_a6663709af6a38c4212fbcd6f2a6552a4}{ull}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \_\_uint128\_t\ \mbox{\hyperlink{modular_8hpp_a99f41a347e7d272c76fc2c4650268ec0}{u128}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \_\_int128\_t\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//Returnerar\ a\ mod\ m.\ Fungerar\ för\ både\ negativa\ och\ positiva\ tal\ a.}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}\ \mbox{\hyperlink{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}{mod}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ m)\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{return}\ (m+(a\%m))\%m;}
+\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//Returnerar\ (a*b)\ mod\ m.\ Där\ a,b,m\ får\ plats\ i\ ett\ 64-\/bitars\ tal}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}\ \mbox{\hyperlink{modular_8hpp_a203badec19a57503c4dfef74093ae74d}{modMult}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ m)\{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}{mod}}(a\ *\ b,\ m);}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//Returnerar\ (a+b)\ mod\ m.\ Där\ a,b,m\ får\ plats\ i\ ett\ 64-\/bitars\ tal}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}\ \mbox{\hyperlink{modular_8hpp_a8d20d404ec3333b8ce5d1373b720e648}{modAdd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ m)\{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}{mod}}(a\ +\ b,\ m);}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//Returnerar\ (a-\/b)\ mod\ m.\ Där\ a,b,m\ får\ plats\ i\ ett\ 64-\/bitars\ tal}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}\ \mbox{\hyperlink{modular_8hpp_a02438309ab9061b2bb6236d350a178b1}{modSub}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ m)\{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}{mod}}(a\ -\/\ b,\ m);}
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//Returnerar\ största\ gemensamma\ nämnaren\ till\ a\ och\ b}}
+\DoxyCodeLine{00036\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ \mbox{\hyperlink{modular_8hpp_aae159a89ce396bcc5c3663e9016ea98e}{gcd}}(\mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ a,\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ b,\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\&\ x0,\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\&\ y0)\{}
+\DoxyCodeLine{00037\ \ \ \ \ a\ =\ std::abs(a);}
+\DoxyCodeLine{00038\ \ \ \ \ b\ =\ std::abs(b);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}(a\ >\ b)\{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::swap(a,b);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (a\ ==\ 0)\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ x0\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ y0\ =\ 1;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ b;}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ x1,\ y1,\ d;}
+\DoxyCodeLine{00049\ \ \ \ \ d\ =\ \mbox{\hyperlink{modular_8hpp_aae159a89ce396bcc5c3663e9016ea98e}{gcd}}(b\ \%\ a,\ a,\ x1,\ y1);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ x0\ =\ y1\ -\/\ (b/a)\ *\ x1;}
+\DoxyCodeLine{00052\ \ \ \ \ y0\ =\ x1;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ d;}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//Returnerar\ inversen\ till\ b\ i\ Z\_m}}
+\DoxyCodeLine{00058\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ \mbox{\hyperlink{modular_8hpp_aefa6d397c68decac67c9ba7a97df7864}{modInverse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ m)\{}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ x,\ y,\ d;}
+\DoxyCodeLine{00060\ \ \ \ \ d\ =\ \mbox{\hyperlink{modular_8hpp_aae159a89ce396bcc5c3663e9016ea98e}{gcd}}(b,\ m,\ x,\ y);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}(d\ !=\ 1)\ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{modular_8hpp_a0c70ad0c06abdf4a884264f4c67e1113}{mod}}(x,\ m);}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//Returnerar\ a\ *\ b\string^(-\/1)\ i\ Z\_m}}
+\DoxyCodeLine{00068\ \mbox{\hyperlink{modular_8hpp_a1ae942ac54ad537f51a8f7d3723f61d7}{ll}}\ \mbox{\hyperlink{modular_8hpp_a42352a9c701a9c79c39aed28b4b73491}{modDiv}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ m)\{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{modular_8hpp_a5e32d90b6bd1d01b8ce5ab8fe4529e4a}{i128}}\ inverse\ =\ \mbox{\hyperlink{modular_8hpp_aefa6d397c68decac67c9ba7a97df7864}{modInverse}}(b,\ m);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}(inverse\ !=\ -\/1)\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{modular_8hpp_a203badec19a57503c4dfef74093ae74d}{modMult}}(a,\ inverse,\ m);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}

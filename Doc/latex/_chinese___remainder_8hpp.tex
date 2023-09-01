@@ -1,0 +1,28 @@
+\doxysection{Arithmetic/\+Chinese-\/\+Remainder-\/\+Theorem/\+Chinese\+\_\+\+Remainder.hpp File Reference}
+\hypertarget{_chinese___remainder_8hpp}{}\label{_chinese___remainder_8hpp}\index{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp@{Arithmetic/Chinese-\/Remainder-\/Theorem/Chinese\_Remainder.hpp}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}Arithmetic\textbackslash{}\+Modular-\/\+Arithmetic\textbackslash{}modular.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long long int \mbox{\hyperlink{_chinese___remainder_8hpp_ae5acec96921c19e2b5fb2d23ea7b7f1f}{Solve\+\_\+\+System\+\_\+\+Of\+\_\+\+Congruencies}} (std\+::vector$<$ std\+::pair$<$ long long int, long long int $>$ $>$ equations, bool co\+\_\+prime=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_chinese___remainder_8hpp_ae5acec96921c19e2b5fb2d23ea7b7f1f}\label{_chinese___remainder_8hpp_ae5acec96921c19e2b5fb2d23ea7b7f1f} 
+\index{Chinese\_Remainder.hpp@{Chinese\_Remainder.hpp}!Solve\_System\_Of\_Congruencies@{Solve\_System\_Of\_Congruencies}}
+\index{Solve\_System\_Of\_Congruencies@{Solve\_System\_Of\_Congruencies}!Chinese\_Remainder.hpp@{Chinese\_Remainder.hpp}}
+\doxysubsubsection{\texorpdfstring{Solve\_System\_Of\_Congruencies()}{Solve\_System\_Of\_Congruencies()}}
+{\footnotesize\ttfamily long long int Solve\+\_\+\+System\+\_\+\+Of\+\_\+\+Congruencies (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::pair$<$ long long int, long long int $>$ $>$}]{equations,  }\item[{bool}]{co\+\_\+prime = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Function to solve a system of congruencies of the form
+
+x = a1 mod b1 x = a2 mod b2x = an mod bn
+
+Takes as argument a vector of pairs, where the i\+:th pair corresponds to (ai, bi)
+
+b1-\/bn do not have to be co-\/prime //\+ACTUALLY THEY DO, BUT THIS WILL BE FIXED IN THE FUTURE If you know b1-\/bn are co\+\_\+prime then setting the flag co\+\_\+prime to true may improve performance
+
+Returns -\/1 if there is no solution 
