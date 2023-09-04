@@ -43,7 +43,17 @@ struct Point{
     Point<T> operator-(Point<T> const & other){
         return {x - other.x, y - other.y};
     }
+
+    Point<T> operator*(T const & scalar){
+        return {x*scalar, y*scalar};
+    }
 };
+
+template<typename T>
+Point<T> operator*(T const & rhs, Point<T> lhs){
+    return lhs*rhs;
+}
+
 
 template<typename T>
 std::ostream& operator<< (std::ostream& out, Point<T>& point){
