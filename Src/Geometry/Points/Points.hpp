@@ -89,7 +89,7 @@ T dot_product(Point<T> const & a, Point<T> const & b){
 
 template<typename T>
 T cross_product(Point<T> const & a, Point<T> const & b){
-    return a.x * b.y - b.x * a.y;
+    return a.x * b.y - a.y * b.x;
 }
 
 template<typename T>
