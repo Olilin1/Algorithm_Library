@@ -22,6 +22,18 @@ inline ll modMult(const i128 a, const i128 b, const i128 m){
     return mod(a * b, m);
 }
 
+ull powMod(ull base, ull exp, ull m) {
+    ull result = 1;
+    base %= m;
+    while (exp) {
+        if (exp % 2 == 1)
+            result = (u128)result * base % m;
+        base = (u128)base * base % m;
+        exp /= 2;
+    }
+    return result;
+}
+
 //Returnerar (a+b) mod m. Där a,b,m får plats i ett 64-bitars tal
 inline ll modAdd(const i128 a, const i128 b, const i128 m){
     return mod(a + b, m);

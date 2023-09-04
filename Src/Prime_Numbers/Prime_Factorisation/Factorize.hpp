@@ -7,30 +7,25 @@ AUTHOR: Oliver Lindgren
 #include<vector>
 
 #include"Prime_Numbers\Prime_Sieve\Sieve.hpp"
+#include"Arithmetic\Modular-Arithmetic\modular.hpp"
 
 using namespace std;
 
 typedef long long int ll;
 typedef unsigned long long int ull;
-typedef __uint128_t u128;
+
+
+/*
+This whole file is a mess...
+why did I name a function f ?
+why did I write a third GCD function?
+why does half the functions not work correctly unless this global variable primes is initialised correctly?
+why does the primes variable have to be initialized outside of any function in this file?
+
+so many questions.
+*/
 
 vector<size_t> primes;
-
-inline ull modMult(const ull a, const ull b, const ull m){
-    return (u128)a * b % m;
-}
-
-ull powMod(ull base, ull exp, ull m) {
-    ull result = 1;
-    base %= m;
-    while (exp) {
-        if (exp % 2 == 1)
-            result = (u128)result * base % m;
-        base = (u128)base * base % m;
-        exp /= 2;
-    }
-    return result;
-}
 
 bool Miller_test(ull n, ull a, ull d, int s) {
     ull x = powMod(a, d, n);
@@ -101,7 +96,7 @@ ull Pollard_Rho(ull n, ull c = 1, ull x0 = 2){
 }
 
 //Almost identical to fast_prime except it keeps track of how many times a prime appears
-vector<pair<ull,ull>> prime_with_mult(ull n){
+vector<pair<ull,ull>> fast_prime_factors_with_mult(ull n){
     vector<pair<ull,ull>> ans;
 
     for(auto x : primes){
@@ -132,7 +127,7 @@ vector<pair<ull,ull>> prime_with_mult(ull n){
     return ans;
 }
 
-vector<ull> fast_prime(ull n){
+vector<ull> fast_prime_factors_without_mult(ull n){
     vector<ull> ans;
 
     for(auto x : primes){
@@ -183,11 +178,7 @@ void nested(vector<pair<ull,ull>>& v, const vector<pair<ull,ull>>& org, int dept
 
 
 vector<ull> fast_factors(ull n){
-    Prime_Sieve sieve(4e4 + 7e3); //Ty 14/3 ~= 4.7
-    primes = sieve.get_Primes();
-
-
-    auto v = prime_with_mult(n);
+    auto v = fast_prime_factors_with_mult(n);
     auto org = v;
     vector<ull> ans;
 
